@@ -1,5 +1,6 @@
 module.exports = {
   env: {
+    jest: true,
     browser: true,
     es2021: true,
   },
@@ -39,6 +40,7 @@ module.exports = {
     "import/no-extraneous-dependencies": "warn",
     "no-underscore-dangle": "off",
     "i18next/no-literal-string": ["error", { markupOnly: true }],
+    "max-len": ["error", { ignoreComments: true }],
   },
   globals: {
     __IS_DEV__: true,

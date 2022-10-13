@@ -2,30 +2,24 @@ module.exports = {
   env: {
     jest: true,
     browser: true,
-    es2021: true,
+    es2021: true
   },
-  extends: [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:i18next/recommended",
-  ],
+  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended", "plugin:storybook/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
     ecmaVersion: "latest",
-    sourceType: "module",
+    sourceType: "module"
   },
-  plugins: [
-    "react",
-    "@typescript-eslint",
-    "i18next",
-  ],
+  plugins: ["react", "@typescript-eslint", "i18next"],
   rules: {
     "react/jsx-indent": [2, 2],
     indent: [2, 2],
-    "react/jsx-filename-extension": [2, { extensions: [".ts", ".jsx", ".tsx"] }],
+    "react/jsx-filename-extension": [2, {
+      extensions: [".ts", ".jsx", ".tsx"]
+    }],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     quotes: ["error", "double"],
@@ -39,10 +33,22 @@ module.exports = {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "warn",
     "no-underscore-dangle": "off",
-    "i18next/no-literal-string": ["error", { markupOnly: true }],
-    "max-len": ["error", { ignoreComments: true, code: 120 }],
+    "i18next/no-literal-string": ["error", {
+      markupOnly: true,
+      ignoreAttribute: ["data-testid", "to"]
+    }],
+    "max-len": ["error", {
+      ignoreComments: true,
+      code: 120
+    }]
   },
   globals: {
-    __IS_DEV__: true,
+    __IS_DEV__: true
   },
+  overrides: [{
+    files: ["**/src/**/*.test.{ts, tsx}"],
+    rules: {
+      "i18next/no-literal-string": "off"
+    }
+  }]
 };

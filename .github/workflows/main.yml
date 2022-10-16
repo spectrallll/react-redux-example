@@ -29,6 +29,6 @@ jobs:
       - name: unit testing
         run: npm run test:unit
       - name: build storybook,
-        run: npm storybook:build
+        run: npm run storybook:build
       - name: screenshot testing,
         run: npm run test:ui:ci

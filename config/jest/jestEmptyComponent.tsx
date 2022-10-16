@@ -1,7 +1,5 @@
 import React from "react";
 
-const jestEmptyComponent = function () {
+export default function JestEmptyComponent() {
   return <div />;
-};
-
-export default () => (<div />);
+}

@@ -3,21 +3,59 @@
   width: var(--sidebar-width);
   background: var(--secondary-bg-color);
   position: relative;
-  transition: width 0.2s;
-}
-
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+  transition: width 0.3s;
 }
 
 .switchers {
   position: absolute;
   bottom: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   width: 100%;
+}
+
+.items {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .lng {
   margin-top: 5px;
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -32px;
+  bottom: 32px;
+}
+
+.link {
+  color: var(--primary-color);
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--secondary-color);
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+  }
+
+  .link {
+    opacity: 0;
+    width: 0;
+    transition: 0.2s opacity;
+  }
 }

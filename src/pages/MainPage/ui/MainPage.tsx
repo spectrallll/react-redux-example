@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { BugButton } from "app/providers/ErrorBoundary";
 import { classNames } from "shared/lib/classNames/classNames";
+import { Counter } from "entities/Counter";
 
 interface MainPageProps {
     className?: string;

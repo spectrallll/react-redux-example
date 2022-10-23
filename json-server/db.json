@@ -5,5 +5,12 @@
   "comments": [
     {"id":  1, "body":  "some comment", "postId":  1}
   ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123"
+    }
+  ],
   "profile": {"name":  "typecode"}
 }

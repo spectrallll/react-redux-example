@@ -1,0 +1,12 @@
+.InputWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.Input {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 6px;
+  padding-left: 15px;
+  background-color: var(--secondary-bg-color);
+}

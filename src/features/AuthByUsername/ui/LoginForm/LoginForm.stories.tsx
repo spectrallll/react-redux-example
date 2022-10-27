@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { LoginForm } from "./LoginForm";
+import LoginForm from "./LoginForm";
 
 export default {
   title: "features/LoginForm",
@@ -23,7 +23,11 @@ Primary.decorators = [StoreDecorator({
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [];
 PrimaryDark.decorators = [StoreDecorator({
   loginForm: { username: "123", password: "661" },
 }), ThemeDecorator(Theme.DARK)];
+
+export const WithError = Template.bind({});
+WithError.decorators = [StoreDecorator({
+  loginForm: { error: "error" },
+})];

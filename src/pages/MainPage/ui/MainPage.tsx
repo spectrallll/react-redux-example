@@ -10,21 +10,10 @@ interface MainPageProps {
 
 const MainPage = ({ className }: MainPageProps) => {
   const { t } = useTranslation();
-  const [value, setValue] = useState("");
-
-  const onChange = (val: string) => {
-    setValue(val);
-  };
 
   return (
     <div className={classNames(className)}>
-      <BugButton />
       {t("Главная страница")}
-      <Input
-        onChange={onChange}
-        value={value}
-        placeholder="Login"
-      />
     </div>
   );
 };

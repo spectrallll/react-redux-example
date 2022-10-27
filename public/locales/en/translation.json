@@ -12,5 +12,8 @@
   "О сайте": "About us",
   "Войти": "Login",
   "Введите имя": "Username",
-  "Введите пароль": "Password"
+  "Введите пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You have entered an incorrect username or password",
+  "Выйти": "Logout"
 }

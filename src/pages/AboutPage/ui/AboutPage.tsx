@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 
@@ -6,7 +6,7 @@ interface AboutPageProps {
   className?: string;
 }
 
-const AboutPage = ({ className }: AboutPageProps) => {
+const AboutPage = memo(({ className }: AboutPageProps) => {
   const { t } = useTranslation("about");
 
   return (
@@ -14,6 +14,6 @@ const AboutPage = ({ className }: AboutPageProps) => {
       {t("О сайте")}
     </div>
   );
-};
+});
 
 export default AboutPage;

@@ -1,0 +1,20 @@
+.link {
+  color: var(--primary-color);
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--secondary-color);
+}
+
+.linkCollapsed {
+  opacity: 0;
+  transition: 0.2s opacity;
+  width: 0;
+}

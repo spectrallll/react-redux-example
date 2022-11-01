@@ -31,31 +31,10 @@
   bottom: 32px;
 }
 
-.link {
-  color: var(--primary-color);
-  margin-left: 10px;
-  opacity: 1;
-}
-
-.item {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  fill: var(--secondary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
   .switchers {
     flex-direction: column;
-  }
-
-  .link {
-    opacity: 0;
-    width: 0;
-    transition: 0.2s opacity;
   }
 }

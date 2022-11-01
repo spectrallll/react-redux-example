@@ -12,5 +12,14 @@
       "password": "123"
     }
   ],
-  "profile": {"name":  "typecode"}
+  "profile": {
+    "first":  "Type",
+    "lastname": "Code",
+    "age": 22,
+    "currency":"RUB",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://b-static.besthdwallpaper.com/makima-iz-anime-devushka-muzhchina-s-benzopiloy-oboi-750x1334-89425_164.jpg"
+  }
 }

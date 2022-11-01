@@ -1,6 +1,5 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { DeepPartial } from "@reduxjs/toolkit";
-import axios from "axios";
 import { getLoginPassword } from "./getLoginPassword";
 
 describe("getLoginIsLoading.test", () => {

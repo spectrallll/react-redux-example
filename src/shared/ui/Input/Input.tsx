@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import {
-  ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
+  ChangeEvent, InputHTMLAttributes, memo, MutableRefObject, useEffect, useRef, useState,
 } from "react";
 import styles from "./Input.module.scss";
 
@@ -15,10 +15,10 @@ interface InputProps extends HTMLInputProps {
 
 export const Input = memo((props: InputProps) => {
   const {
-    className, value, onChange, type = "text", autofocus, ...restProps
+    className, placeholder, value, onChange, type = "text", autofocus, ...restProps
   } = props;
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef() as MutableRefObject<HTMLInputElement>;
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
   };
@@ -30,13 +30,17 @@ export const Input = memo((props: InputProps) => {
   }, [autofocus]);
 
   return (
-    <input
-      ref={inputRef}
-      type={type}
-      value={value}
-      onChange={onChangeHandler}
-      className={classNames(styles.Input, {}, [className])}
-      {...restProps}
-    />
+    <div className={classNames(styles.InputWrapper, {}, [className])}>
+      {placeholder && <div className={styles.placeholder}>{placeholder}</div>}
+      <input
+        ref={inputRef}
+        type={type}
+        value={value}
+        onChange={onChangeHandler}
+        className={styles.Input}
+        {...restProps}
+      />
+    </div>
+
   );
 });

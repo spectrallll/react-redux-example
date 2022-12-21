@@ -1,0 +1,14 @@
+.ProfilePageHeader {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.editBtn {
+  margin-left: auto;
+}
+
+.btn {
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}

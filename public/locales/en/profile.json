@@ -2,5 +2,13 @@
   "Профиль": "Profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your firstname",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Ваш возраст": "Your age",
+  "Город": "City",
+  "Попробуйте обновить страницу": "Try to reload page",
+  "Произошла ошибка при загрузке данных": "An error occurred while loading data",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Имя пользователя": "Username",
+  "Введите ссылку на аватар": "Insert avatar url"
 }

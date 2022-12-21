@@ -1,6 +1,6 @@
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import {
-  ButtonHTMLAttributes, FC, memo, ReactNode,
+  ButtonHTMLAttributes, memo, ReactNode,
 } from "react";
 import styles from "./Button.module.scss";
 
@@ -8,6 +8,8 @@ export enum ButtonTheme {
   PRIMARY = "primary",
   CLEAR = "clear",
   OUTLINE = "outline",
+  OUTLINED_RED = "outline_red"
+  ,
   BACKGROUND = "background"
 }
 

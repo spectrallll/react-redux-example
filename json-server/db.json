@@ -1,9 +1,17 @@
 {
   "posts": [
-    { "id":  "1", "title":  "json-server", "author": "typecode"}
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typecode"
+    }
   ],
   "comments": [
-    {"id":  "1", "body":  "some comment", "postId":  1}
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "users": [
     {
@@ -13,13 +21,13 @@
     }
   ],
   "profile": {
-    "firstname":  "Type",
-    "lastname": "Code",
-    "age": 22,
-    "currency":"RUB",
+    "firstname": "Pavel123",
+    "lastname": "Terekhov",
+    "age": 19,
+    "currency": "USD",
     "country": "Russia",
     "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://b-static.besthdwallpaper.com/makima-iz-anime-devushka-muzhchina-s-benzopiloy-oboi-750x1334-89425_164.jpg"
+    "username": "spectrall",
+    "avatar": "https://i.ibb.co/xJs2FBX/k-KOVJm-ANAVob-OEJDYz7-Coe-YWGMWAxw-An3h-CRH11-Pwvv-GLqp1-ECEWERl7j-Nmtacb-Bb-N8-OIOQsgb4-TFy-L-in-G.jpg"
   }
 }

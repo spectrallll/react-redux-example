@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended", "plugin:storybook/recommended"],
+  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -50,6 +50,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
   overrides: [{
     files: ["**/src/**/*.test.{ts, tsx}"],
@@ -58,7 +59,7 @@ module.exports = {
     },
   },
   {
-    files: ["*.stories.tsx"],
+    files: ["**/src/**/*.stories.{jsx, tsx}"],
     rules: {
       "react/jsx-props-no-spreading": "off",
     },

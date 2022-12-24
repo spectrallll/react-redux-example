@@ -49,7 +49,7 @@ export const profileSlice = createSlice({
     });
 
     builder.addCase(updateProfileData.pending, (state) => {
-      state.error = undefined;
+      state.validateErrors = undefined;
       state.isLoading = true;
     });
     builder.addCase(updateProfileData.fulfilled, (

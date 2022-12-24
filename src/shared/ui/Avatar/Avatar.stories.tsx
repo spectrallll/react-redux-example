@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import MockAvatar from "shared/assets/mocks/avatar.jpg";
 import { Avatar } from "./Avatar";
 
 export default {
@@ -17,11 +18,11 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  src: "https://tl.rulate.ru/i/translation/22/6/12054.jpg",
+  src: MockAvatar,
 };
 
 export const WithSize = Template.bind({});
 WithSize.args = {
-  src: "https://tl.rulate.ru/i/translation/22/6/12054.jpg",
+  src: MockAvatar,
   size: 200,
 };

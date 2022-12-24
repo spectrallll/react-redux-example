@@ -27,27 +27,27 @@ PrimaryDark.args = {
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTitle = Template.bind({});
-onlyTitle.args = {
+export const OnlyTitle = Template.bind({});
+OnlyTitle.args = {
   title: "Title lorem ipsum",
 };
 
-export const onlyText = Template.bind({});
-onlyText.args = {
+export const OnlyText = Template.bind({});
+OnlyText.args = {
   text: "lorem ipsum san lsa ipsum lorem",
 };
 
-export const onlyTitleDark = Template.bind({});
-onlyTitleDark.args = {
+export const OnlyTitleDark = Template.bind({});
+OnlyTitleDark.args = {
   title: "Title lorem ipsum",
 };
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTextDark = Template.bind({});
-onlyTextDark.args = {
+export const OnlyTextDark = Template.bind({});
+OnlyTextDark.args = {
   text: "lorem ipsum san lsa ipsum lorem",
 };
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Error = Template.bind({});
 Error.args = {

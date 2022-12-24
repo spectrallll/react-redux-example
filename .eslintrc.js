@@ -23,7 +23,8 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     quotes: ["error", "double"],
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-indent-props": [2, 2],
@@ -55,5 +56,12 @@ module.exports = {
     rules: {
       "i18next/no-literal-string": "off",
     },
-  }],
+  },
+  {
+    files: ["*.stories.tsx"],
+    rules: {
+      "react/jsx-props-no-spreading": "off",
+    },
+  },
+  ],
 };

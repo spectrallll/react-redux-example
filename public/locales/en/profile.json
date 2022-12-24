@@ -6,9 +6,13 @@
   "Ваш возраст": "Your age",
   "Город": "City",
   "Попробуйте обновить страницу": "Try to reload page",
-  "Произошла ошибка при загрузке данных": "An error occurred while loading data",
   "Отменить": "Cancel",
   "Сохранить": "Save",
   "Имя пользователя": "Username",
-  "Введите ссылку на аватар": "Insert avatar url"
+  "Введите ссылку на аватар": "Insert avatar url",
+  "Неккоректный возраст": "Incorrect age",
+  "Неккоректный город": "Incorrect city",
+  "Некорректная информация о пользователе": "Incorrect info about user",
+  "Данные не указаны": "Data not exist",
+  "Произошла ошибка при загрузке данных, попробуйте перезагрузить страницу": "An error occurred while loading data. Try to reload page."
 }

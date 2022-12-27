@@ -5,6 +5,7 @@ import { loginByUsername } from "../services/loginByUsername/loginByUsername";
 const initialState: LoginSchema = {
   username: "",
   password: "",
+
   isLoading: false,
   error: "",
 };

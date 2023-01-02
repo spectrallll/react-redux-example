@@ -4,4 +4,11 @@
   --primary-color: #333;
   --secondary-color: #6f7577;
   --inverted-color: #181818;
+  // skeleton
+  --skeleton-color: #ffffff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+  --skeleton-background: var(--bg-color);
+
+  // code
+  --code-bg: rgba(0 0 0 / 5%);
 }

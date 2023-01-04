@@ -24,4 +24,12 @@ body {
   height: calc(100vh - 50px);
   overflow-y: auto;
   width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }

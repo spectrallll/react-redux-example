@@ -23,7 +23,7 @@ body {
   padding: 15px;
   height: calc(100vh - 50px);
   overflow-y: auto;
-  width: 100%;
+  flex-shrink: 100;
   &::-webkit-scrollbar {
     display: none;
   }

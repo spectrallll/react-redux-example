@@ -16,5 +16,9 @@
   "Выйти": "Logout",
   "Профиль": "Profile",
   "Статьи": "Articles",
-  "Комментарии отсутствуют": "No comments"
+  "Комментарии отсутствуют": "No comments",
+  "Валюта": "Currency",
+  "Страна": "Country",
+  "Введите текст комментария": "Insert commentary text...",
+  "Отправить": "Send"
 }

@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import {
   fetchProfileData,
@@ -18,6 +18,8 @@ import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = {
@@ -31,6 +33,8 @@ interface ProfilePageProps {
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation("profile");
+
+  const { id } = useParams<{ id: string}>();
 
   const formData = useSelector(getProfileForm);
   const isLoading = useSelector(getProfileIsLoading);
@@ -46,11 +50,11 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     [ValidateProfileError.INCORRECT_CITY]: t("Неккоректный город"),
   };
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions

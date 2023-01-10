@@ -1,3 +1,21 @@
 .comment {
   margin-top: 20px;
 }
+
+.SkeletonCard {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.username {
+  margin-left: 10px;
+}

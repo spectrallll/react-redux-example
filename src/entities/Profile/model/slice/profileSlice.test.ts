@@ -8,10 +8,11 @@ const data = {
   username: "admin",
   age: 22,
   country: Country.Ukraine,
-  lastname: "ulbi tv",
+  lastname: "tv",
   first: "asd",
   city: "asf",
   currency: Currency.USD,
+  id: "1",
 };
 
 describe("profileSlice.test", () => {

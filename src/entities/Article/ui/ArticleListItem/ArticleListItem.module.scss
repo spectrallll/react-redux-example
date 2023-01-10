@@ -1,0 +1,107 @@
+.ArticleListItem {
+  cursor: pointer;
+}
+
+.LIST {
+  width: 230px;
+  transition: 0.2s;
+
+  .imageWrapper {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+
+  .img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .date {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.01);
+    .date {
+      display: block;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .types p {
+    width: 115px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .views {
+    margin-left: auto;
+    margin-right: 8px;
+  }
+
+  .title {
+    margin-top: 8px;
+  }
+
+  .title p {
+    width: 299px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}
+
+.TILE {
+  .views {
+    margin-left: auto;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+    margin-top: 16px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .username {
+    margin-left: 8px;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .title {
+    margin-top: 8px;
+  }
+
+  .img {
+    margin: 16px 0;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+  }
+}

@@ -1,15 +1,15 @@
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
-import { ArticleListItemSkeleton } from "entities/Article/ui/ArticleListItem/ArticleListItemSkeleton";
+import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import styles from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
 interface ArticleListProps {
-    className?: string;
+  className?: string;
   articles: Article[];
   isLoading?: boolean;
-  view?: ArticleView
+  view: ArticleView
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.LIST ? 9 : 3).fill(0).map((item, index) => (
@@ -20,7 +20,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     className,
     articles,
     isLoading,
-    view = ArticleView.LIST,
+    view,
   } = props;
 
   const renderArticle = useCallback((article: Article) => (
@@ -30,7 +30,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       className={styles.card}
       key={article.id}
     />
-  ), [articles]);
+  ), [articles, view]);
 
   if (isLoading) {
     return (

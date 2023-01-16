@@ -7,8 +7,5 @@
 .LIST {
   display: flex;
   flex-wrap: wrap;
-  .card {
-    margin-left: 30px;
-    margin-bottom: 30px;
-  }
+  gap: 30px;
 }

@@ -4,9 +4,9 @@ export function useThrottle(callback: (...args: any[]) => void, ms: number) {
   // Можно ли вызывать Callback?
   const throttleRef = useRef(false);
 
-  return useCallback(() => {
+  return useCallback((...args: any[]) => {
     if (!throttleRef.current) {
-      callback();
+      callback(...args);
       throttleRef.current = true;
 
       setTimeout(() => {

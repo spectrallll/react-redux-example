@@ -41,7 +41,7 @@ export const Page = memo((props: PageProps) => {
       position: e.currentTarget.scrollTop,
       path: pathname,
     }));
-  }, 500);
+  }, 400);
 
   useInitialEffect(() => {
     wrapperRef.current.scrollTop = scrollPosition;
@@ -54,7 +54,7 @@ export const Page = memo((props: PageProps) => {
       className={classNames(styles.Page, {}, [className])}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div className={styles.trigger} ref={triggerRef}/> : null}
     </section>
   );
 });

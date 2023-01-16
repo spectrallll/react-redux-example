@@ -1,5 +1,18 @@
 {
   "Статья не найдена": "Article not found",
   "Комментарии": "Comments",
-  "Назад к списку": "Back to list"
+  "Назад к списку": "Back to list",
+  "Сортировать по": "Sort by",
+  "Поиск": "Search",
+  "по": "by",
+  "возрастанию": "asc",
+  "убыванию": "desc",
+  "дате создания": "created date",
+  "названию": "name",
+  "просмотрам": "views",
+  "Айти": "IT",
+  "Экономика": "Economic",
+  "Наука": "Science",
+  "Все статьи": "All articles",
+  "Статьи не найдены": "Articles not found"
 }

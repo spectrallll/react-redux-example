@@ -594,6 +594,18 @@
       "userId": "2",
       "text": "Test commentariya)",
       "id": "pQ9g0ec"
+    },
+    {
+      "articleId": "9",
+      "userId": "2",
+      "text": "Hello Kotlin",
+      "id": "ojaNTnu"
+    },
+    {
+      "articleId": "6",
+      "userId": "2",
+      "text": "Hello Java",
+      "id": "HjK_CbZ"
     }
   ]
 }

@@ -1,14 +1,16 @@
 import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
-import { LoginSchema } from "features/AuthByUsername";
+import { LoginSchema } from "features/authByUsername";
 import {
   AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
-import { AddCommentFormSchema } from "features/AddCommentForm";
+import {
+  ArticleDetailsPageSchema,
+} from "pages/ArticleDetailsPage";
+import { AddCommentFormSchema } from "features/addCommentForm";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { ScrollSaveSchema } from "widgets/Page";
 
@@ -21,9 +23,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
-  addCommentForm?: AddCommentFormSchema
-  articlesPage?: ArticlesPageSchema
+  addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlesPageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -6,6 +6,16 @@
   margin-top: 20px;
 }
 
+.recommendTitle {
+  margin-top: 20px;
+}
+
 .commentForm {
   margin-top: 20px;
+}
+
+.recommendations {
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
 }

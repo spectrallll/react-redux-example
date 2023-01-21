@@ -20,7 +20,7 @@ export const addCommentFormSlice = createSlice({
   //       state.isLoading = true;
   //       state.error = undefined;
   //     })
-  //     .addCase(fetchAddCommentFormData.fulfilled, (state, action: PayloadAction<AddCommentForm>) => {
+  //     .addCase(fetchAddCommentFormData.fulfilled, (state, action: PayloadAction<addCommentForm>) => {
   //       state.isLoading = false;
   //       state.data = action.payload;
   //     })

@@ -1,17 +1,18 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import { memo, useCallback } from "react";
+import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
+import { Text, TextSize } from "shared/ui/Text/Text";
+import { useTranslation } from "react-i18next";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import styles from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { useTranslation } from "react-i18next";
 
 interface ArticleListProps {
   className?: string;
   articles: Article[];
   isLoading?: boolean;
-  view: ArticleView
+  view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.LIST ? 9 : 3).fill(0).map((item, index) => (
@@ -22,7 +23,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
     className,
     articles,
     isLoading,
-    view,
+    view = ArticleView.LIST,
+    target,
   } = props;
 
   const { t } = useTranslation("article");
@@ -33,6 +35,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       view={view}
       className={styles.card}
       key={article.id}
+      target={target}
     />
   ), [articles, view]);
 

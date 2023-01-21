@@ -21,7 +21,6 @@ export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: UseInfin
       };
 
       observer.current = new IntersectionObserver(([entry]) => {
-        console.log("ОТСЛЕЖИВАЮ");
         if (entry.isIntersecting) {
           callback();
         }
@@ -33,7 +32,6 @@ export function useInfiniteScroll({ callback, wrapperRef, triggerRef }: UseInfin
     return () => {
       if (observer.current && triggerElement) {
         observer.current.unobserve(triggerElement);
-        console.log("NE ОТСЛЕЖИВАЮ");
       }
     };
   }, [callback, triggerRef, wrapperRef]);

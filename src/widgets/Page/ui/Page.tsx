@@ -7,9 +7,9 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useLocation } from "react-router-dom";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useSelector } from "react-redux";
-import { getSaveScrollByPath } from "widgets/Page";
 import { StateSchema } from "app/providers/StoreProvider";
 import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
+import { getSaveScrollByPath } from "../model/selectors/saveScrollSelectors";
 import { scrollSaveActions } from "../model/slices/scrollSaveSlice";
 import styles from "./Page.module.scss";
 

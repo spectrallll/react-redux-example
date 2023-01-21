@@ -606,6 +606,18 @@
       "userId": "2",
       "text": "Hello Java",
       "id": "HjK_CbZ"
+    },
+    {
+      "articleId": "18",
+      "userId": "2",
+      "text": "economic",
+      "id": "ipEC_et"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "admin",
+      "id": "fYLDm16"
     }
   ]
 }

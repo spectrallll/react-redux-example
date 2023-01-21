@@ -1,4 +1,4 @@
-import { PageError } from "widgets/PageError/ui/PageError";
+import { PageError } from "../PageError/ui/PageError";
 
 export {
   PageError,

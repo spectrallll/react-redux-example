@@ -13,7 +13,11 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "i18next"],
+  plugins: ["react",
+    "@typescript-eslint",
+    "i18next",
+    "path-checker-plugin",
+  ],
   rules: {
     "react/jsx-indent": [2, 2],
     indent: [2, 2],
@@ -47,6 +51,7 @@ module.exports = {
     //       ignoreComments: true,
     //       code: 120,
     //     }],
+    "path-checker-plugin/path-checker": "error",
   },
   globals: {
     __IS_DEV__: true,

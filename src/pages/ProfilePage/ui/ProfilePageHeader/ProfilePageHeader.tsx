@@ -9,7 +9,7 @@ import {
 } from "entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData } from "entities/User";
-import styles from "./ProfilePageHeader.module.scss";
+import {HStack} from "shared/ui/Stack";
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -42,15 +42,16 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
   }, [dispatch]);
 
   return (
-    <div
-      className={classNames(styles.ProfilePageHeader, {}, [className])}
+    <HStack
+      max
+      justify="spaceBetween"
+      className={classNames("", {}, [className])}
     >
       <Text title={t("Профиль")} />
       {canEdit && (
-        <div className={styles.btnWrapper}>
+        <div>
           {readonly ? (
             <Button
-              className={styles.editBtn}
               theme={ButtonTheme.OUTLINE}
               onClick={onEdit}
             >
@@ -58,26 +59,24 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
             </Button>
           )
             : (
-              <div className={styles.editBtn}>
+              <HStack gap="8">
                 <Button
-                  className={styles.btn}
                   theme={ButtonTheme.OUTLINED_RED}
                   onClick={onCancelEdit}
                 >
                   {t("Отменить")}
                 </Button>
                 <Button
-                  className={styles.btn}
                   theme={ButtonTheme.OUTLINE}
                   onClick={onSave}
                 >
                   {t("Сохранить")}
                 </Button>
-              </div>
+              </HStack>
             )}
         </div>
       )}
 
-    </div>
+    </HStack>
   );
 };

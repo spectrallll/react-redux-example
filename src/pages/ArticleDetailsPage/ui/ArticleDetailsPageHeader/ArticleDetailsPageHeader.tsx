@@ -5,9 +5,9 @@ import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getCantEditArticle } from "pages/ArticleDetailsPage/model/selectors/article";
+import { getCantEditArticle } from "../../model/selectors/article";
 import { getArticleDetailsData } from "entities/Article";
-import styles from "./ArticleDetailsPageHeader.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -33,8 +33,10 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [article?.id, navigate]);
 
   return (
-    <div
-      className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}
+    <HStack
+      max
+      justify="spaceBetween"
+      className={classNames("", {}, [className])}
     >
       <Button
         theme={ButtonTheme.OUTLINE}
@@ -44,13 +46,12 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
       </Button>
       {canEdit && (
         <Button
-          className={styles.editBtn}
           theme={ButtonTheme.OUTLINE}
           onClick={onEditArticle}
         >
           {t("Редактировать")}
         </Button>
       )}
-    </div>
+    </HStack>
   );
 });

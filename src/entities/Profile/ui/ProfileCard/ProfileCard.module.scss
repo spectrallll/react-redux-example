@@ -15,18 +15,10 @@
   }
 }
 
-.input {
-  &:not(:first-child) {
-    margin-top: 10px;
-  }
-}
-
 .loading,
 .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 300px;
+  width: 100%;
 }
 
 .error {

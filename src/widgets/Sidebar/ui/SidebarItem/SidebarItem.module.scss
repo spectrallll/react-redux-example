@@ -4,13 +4,9 @@
   opacity: 1;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-}
-
 .icon {
   fill: var(--secondary-color);
+  vertical-align: top;
 }
 
 .linkCollapsed {

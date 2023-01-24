@@ -17,6 +17,7 @@ export interface FlexProps {
     direction: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
+    tag?: keyof HTMLElementTagNameMap;
 }
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -53,6 +54,7 @@ export const Flex = memo((props: FlexProps) => {
     direction = "row",
     gap,
     max,
+    tag = "div",
   } = props;
 
   const classes = [
@@ -67,11 +69,13 @@ export const Flex = memo((props: FlexProps) => {
     [styles.max]: max,
   };
 
+  const Tag = tag;
+
   return (
-    <div
+    <Tag
       className={classNames(styles.Flex, mods, classes)}
     >
       {children}
-    </div>
+    </Tag>
   );
 });

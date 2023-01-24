@@ -1,8 +1,8 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Text, TextSize, TextTheme } from "shared/ui/Text/Text";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
+import { Text, TextSize, TextTheme } from "./Text";
 
 export default {
   title: "shared/Text",
@@ -64,8 +64,15 @@ SizeM.args = {
 };
 
 export const SizeL = Template.bind({});
-SizeM.args = {
+SizeL.args = {
   title: "Title lorem ipsum",
   text: "lorem ipsum san lsa ipsum lorem",
   size: TextSize.L,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+  title: "Title lorem ipsum",
+  text: "lorem ipsum san lsa ipsum lorem",
+  size: TextSize.S,
 };

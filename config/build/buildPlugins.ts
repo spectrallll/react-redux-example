@@ -34,11 +34,11 @@ export function buildPlugins({
 
   if (isDev) {
     plugins.push(new ReactRefreshPlugin());
-    plugins.push(
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false,
-      }),
-    );
+    // plugins.push(
+    //   new BundleAnalyzerPlugin({
+    //     openAnalyzer: false,
+    //   }),
+    // );
   }
 
   return plugins;

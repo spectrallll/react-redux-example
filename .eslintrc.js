@@ -70,6 +70,7 @@ module.exports = {
     rules: {
       "react/jsx-props-no-spreading": "off",
       "max-len": "off",
+      "path-checker-plugin/path-checker": "off",
     },
   },
   ],

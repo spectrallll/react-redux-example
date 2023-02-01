@@ -66,11 +66,11 @@ module.exports = {
     },
   },
   {
-    files: ["**/src/**/*.stories.{jsx, tsx}"],
+    files: ["**/src/**/*.stories.{jsx, tsx}", ".stories.tsx"],
     rules: {
-      "react/jsx-props-no-spreading": "off",
       "max-len": "off",
       "path-checker-plugin/path-checker": "off",
+      "react/jsx-props-no-spreading": "off",
     },
   },
   ],

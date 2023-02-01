@@ -28,6 +28,7 @@
   &:hover {
     opacity: 0.8;
     transform: scale(1.01);
+
     .date {
       display: block;
     }
@@ -61,7 +62,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-
 }
 
 .TILE {

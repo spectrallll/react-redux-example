@@ -39,7 +39,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <header className={classNames(styles.Navbar, {}, [className])}>
         <Text
           className={styles.appName}
-          title={t("Пресса")}
+          title={t("Press")}
           theme={TextTheme.PRIMARY}
         />
         <AppLink
@@ -74,7 +74,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(styles.Navbar, {}, [className])}>
-      <Text className={styles.appName} title={t("Пресса")} />
+      <Text className={styles.appName} title={t("Press")} />
       <AppLink to={RoutePath.article_create}>
         {t("Создать статью")}
       </AppLink>

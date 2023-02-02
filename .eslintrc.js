@@ -71,6 +71,7 @@ module.exports = {
       "max-len": "off",
       "path-checker-plugin/path-checker": "off",
       "react/jsx-props-no-spreading": "off",
+      "i18next/no-literal-string": "off",
     },
   },
   ],

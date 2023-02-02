@@ -8,10 +8,10 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { ProfileCard } from "entities/Profile";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { VStack } from "shared/ui/Stack";
 import {
   EditableProfileCardHeader,
 } from "../EditableProfileCardHeader/EditableProfileCardHeader";
-import { VStack } from "shared/ui/Stack";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import {
   getProfileIsLoading,
@@ -106,6 +106,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 theme={TextTheme.ERROR}
                 text={validateErrorTranslates[err]}
                 key={err}
+                data-testid="EditableProfileCard.Error"
               />
             ))}
         <EditableProfileCardHeader />

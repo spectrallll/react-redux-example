@@ -29,7 +29,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_details}${article?.id}edit`);
+    navigate(`${RoutePath.article_details}${article?.id}/edit`);
   }, [article?.id, navigate]);
 
   return (

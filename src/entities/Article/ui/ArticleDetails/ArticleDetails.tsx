@@ -12,11 +12,12 @@ import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
 import { Icon } from "shared/ui/Icon/Icon";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlockType } from "../../model/consts/consts";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleBlock } from "../../model/types/article";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import styles from "./ArticleDetails.module.scss";
 import {

@@ -24,6 +24,7 @@
     // можно писать такой
     // import React from "react";
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]

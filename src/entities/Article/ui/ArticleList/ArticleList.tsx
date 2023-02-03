@@ -2,7 +2,6 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { HTMLAttributeAnchorTarget, memo, useCallback } from "react";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
-import { AutoSizer, List } from "react-virtualized";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import styles from "./ArticleList.module.scss";
 import { Article, ArticleView } from "../../model/types/article";
@@ -57,16 +56,5 @@ export const ArticleList = memo((props: ArticleListProps) => {
       {articles.length ? articles.map(renderArticle) : null}
       {isLoading && getSkeletons(view)}
     </div>
-    // <AutoSizer>
-    //   {({ width, height }) => (
-    //     <List
-    //       height={height}
-    //       rowCount={articles.length}
-    //       rowHeight={500}
-    //       rowRenderer={() => <div>row</div>}
-    //       width={width}
-    //     />
-    //   )}
-    // </AutoSizer>
   );
 });

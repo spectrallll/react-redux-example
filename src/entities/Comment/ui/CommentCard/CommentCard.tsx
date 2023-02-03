@@ -5,9 +5,9 @@ import { Text } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { VStack } from "shared/ui/Stack";
 import styles from "./CommentCard.module.scss";
 import { Comment } from "../../model/types/comment";
-import {VStack} from "shared/ui/Stack";
 
 interface CommentCardProps {
     className?: string;
@@ -24,7 +24,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   if (isLoading) {
     return (
-      <div
+      <VStack
+        gap="8"
+        max
         className={classNames(styles.CommentCard, {}, [className, styles.loading])}
       >
         <div className={styles.header}>
@@ -32,7 +34,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
           <Skeleton height={16} width={100} className={styles.username} />
         </div>
         <Skeleton width="100%" height={50} className={styles.text} />
-      </div>
+      </VStack>
     );
   }
 

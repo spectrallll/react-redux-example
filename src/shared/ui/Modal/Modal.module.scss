@@ -8,6 +8,9 @@
   pointer-events: none;
   z-index: -1;
   color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay {

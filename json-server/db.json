@@ -1,9 +1,36 @@
 {
-  "posts": [
+  "notifications": [
     {
       "id": "1",
-      "title": "json-server",
-      "author": "typecode"
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "2"
     }
   ],
   "users": [
@@ -52,8 +79,8 @@
       "firstname": "Admin",
       "lastname": "Adminovich",
       "age": 99,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "EUR",
+      "country": "Belarus",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://sun9-north.userapi.com/sun9-84/s/v1/ig2/JwB8G_BtsxOzXb71vsy-cKj1Cdezi7jHREQI_yuWH9ybfKhd7bgYP7LN9ZMvO1M9Q3vVda8F8Mzz_t383FOG3Nco.jpg?size=1024x680&quality=95&type=album"

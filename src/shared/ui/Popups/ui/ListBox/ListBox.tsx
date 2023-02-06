@@ -2,9 +2,11 @@ import { Fragment, ReactNode } from "react";
 import { Listbox as HListBox } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DropdownDirection } from "shared/types/ui";
-import { Button } from "../Button/Button";
-import { HStack } from "../Stack/HStack/HStack";
+import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack/HStack/HStack";
 import styles from "./ListBox.module.scss";
+import { mapDirectionClass } from "../../styles/consts";
+import popupStyles from "../../styles/Popup.module.scss";
 
 export interface ListBoxItem {
   value: string;
@@ -22,13 +24,6 @@ interface ListBoxProps {
   direction?: DropdownDirection;
   label?: string;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  "bottom left": styles.optionsBottomLeft,
-  "bottom right": styles.optionsBottomRight,
-  "top right": styles.optionsTopRight,
-  "top left": styles.optionsTopLeft,
-};
 
 export const ListBox = (props: ListBoxProps) => {
   const {
@@ -49,7 +44,7 @@ export const ListBox = (props: ListBoxProps) => {
             <span className={
               classNames(
                 "",
-                { [styles.disabled]: readonly },
+                { [popupStyles.disabled]: readonly },
                 [],
               )
             }
@@ -62,8 +57,8 @@ export const ListBox = (props: ListBoxProps) => {
         as="div"
         className={classNames(
           styles.ListBox,
-          { [styles.disabled]: readonly },
-          [className],
+          { [popupStyles.disabled]: readonly },
+          [className, popupStyles.popup],
         )}
         value={value}
         onChange={onChange}
@@ -93,8 +88,8 @@ export const ListBox = (props: ListBoxProps) => {
               {({ active, selected, disabled }) => (
                 <li
                   className={classNames(styles.item, {
-                    [styles.active]: active,
-                    [styles.disabled]: disabled,
+                    [popupStyles.active]: active,
+                    [popupStyles.disabled]: disabled,
                   }, [])}
                 >
                   {selected && ">"}

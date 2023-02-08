@@ -14,7 +14,6 @@ import { HStack } from "@/shared/ui/Stack";
 import { NotificationButton } from "@/features/notificationButton";
 import { AvatarDropdown } from "@/features/avatarDropdown";
 import styles from "./Navbar.module.scss";
-import { AnimationProvider } from "@/shared/lib/components/AnimationProvider";
 
 interface NavbarProps {
     className?: string;
@@ -53,9 +52,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           className={styles.actions}
           align="center"
         >
-          <AnimationProvider>
-            <NotificationButton />
-          </AnimationProvider>
+          <NotificationButton />
           <AvatarDropdown />
         </HStack>
       </header>

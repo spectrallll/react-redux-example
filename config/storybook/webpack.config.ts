@@ -38,6 +38,9 @@ export default ({ config }: {config: webpack.Configuration}) => {
     __API__: JSON.stringify("http://api.ru"),
     __PROJECT__: JSON.stringify("storybook"),
   }));
+  config!.resolve!.alias = {
+    "@": path.resolve(__dirname, "..", "..", "src"),
+  };
 
   return config;
 };

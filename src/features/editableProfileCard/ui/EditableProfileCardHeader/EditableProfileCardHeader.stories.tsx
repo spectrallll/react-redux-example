@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
 
 export default {

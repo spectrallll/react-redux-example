@@ -1,9 +1,9 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
-import ListIcon from "shared/assets/icons/list-24-24.svg";
-import TileIcon from "shared/assets/icons/tiled-24-24.svg";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import ListIcon from "@/shared/assets/icons/list-24-24.svg";
+import TileIcon from "@/shared/assets/icons/tiled-24-24.svg";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon/Icon";
 import { ArticleView } from "../../model/consts/consts";
 import styles from "./ArticleViewSelector.module.scss";
 

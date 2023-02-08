@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import MockAvatar from "shared/assets/mocks/avatar.jpg";
+import MockAvatar from "@/shared/assets/mocks/avatar.jpg";
 import { Avatar } from "./Avatar";
 
 export default {

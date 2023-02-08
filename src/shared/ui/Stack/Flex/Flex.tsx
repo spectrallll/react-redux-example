@@ -1,5 +1,5 @@
-import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { memo, ReactNode } from "react";
+import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import styles from "./Flex.module.scss";
 
 export type FlexJustify = "start"

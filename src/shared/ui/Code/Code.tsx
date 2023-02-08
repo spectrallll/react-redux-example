@@ -1,8 +1,8 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import CopyIcon from "shared/assets/icons/copy-20-20.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import CopyIcon from "@/shared/assets/icons/copy-20-20.svg";
 import styles from "./Code.module.scss";
 
 interface CodeProps {

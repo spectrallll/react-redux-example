@@ -1,14 +1,14 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import {
   memo, MutableRefObject, ReactNode, UIEvent, useRef,
 } from "react";
-import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useLocation } from "react-router-dom";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useSelector } from "react-redux";
-import { StateSchema } from "app/providers/StoreProvider";
-import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import { getSaveScrollByPath } from "../model/selectors/saveScrollSelectors";
 import { scrollSaveActions } from "../model/slices/scrollSaveSlice";
 import styles from "./Page.module.scss";
@@ -54,7 +54,7 @@ export const Page = memo((props: PageProps) => {
       className={classNames(styles.Page, {}, [className])}
     >
       {children}
-      {onScrollEnd ? <div className={styles.trigger} ref={triggerRef}/> : null}
+      {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}
     </main>
   );
 });

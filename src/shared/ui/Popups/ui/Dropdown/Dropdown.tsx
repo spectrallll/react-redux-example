@@ -44,7 +44,7 @@ export const Dropdown = (props: DropdownProps) => {
         {trigger}
       </Menu.Button>
       <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: {active:boolean}) => (
             <button
               disabled={item.disabled}
@@ -65,6 +65,9 @@ export const Dropdown = (props: DropdownProps) => {
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
+                /* eslint-disable-next-line react/no-array-index-key */
+                key={`dropdown key${index}`}
+
               >
                 {content}
               </Menu.Item>
@@ -75,6 +78,8 @@ export const Dropdown = (props: DropdownProps) => {
             <Menu.Item
               as={Fragment}
               disabled={item.disabled}
+              /* eslint-disable-next-line react/no-array-index-key */
+              key={`dropdown key${index}`}
             >
               {content}
             </Menu.Item>

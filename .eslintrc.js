@@ -53,7 +53,10 @@ module.exports = {
     //       code: 120,
     //     }],
     "path-checker-plugin/path-checker": ["error", { alias: "@" }],
-    "path-checker-plugin/public-api-import-lock": ["error", { alias: "@" }],
+    "path-checker-plugin/public-api-import-lock": ["error", {
+      alias: "@",
+      testFilesPatterns: ["**/*.test.*", "**/*.story.*", "**/StoreDecorator.tsx"],
+    }],
   },
   globals: {
     __IS_DEV__: true,

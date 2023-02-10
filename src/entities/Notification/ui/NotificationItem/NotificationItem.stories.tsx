@@ -15,8 +15,30 @@ export default {
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  item: {
+    id: "1",
+    title: "Уведомление 1",
+    description: "Hello world 1",
+  },
+};
 
 export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
+PrimaryDark.args = {
+  item: {
+    id: "1",
+    title: "Уведомление 1",
+    description: "Hello world 1",
+  },
+};
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const WithHrefProp = Template.bind({});
+WithHrefProp.args = {
+  item: {
+    id: "1",
+    title: "Уведомление 1",
+    description: "Hello world 1",
+    href: "http://localhost:3000",
+  },
+};

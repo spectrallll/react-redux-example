@@ -52,7 +52,8 @@ module.exports = {
     //       ignoreComments: true,
     //       code: 120,
     //     }],
-    "path-checker-plugin/path-checker": "error",
+    "path-checker-plugin/path-checker": ["error", { alias: "@" }],
+    "path-checker-plugin/public-api-import-lock": ["error", { alias: "@" }],
   },
   globals: {
     __IS_DEV__: true,
@@ -72,6 +73,7 @@ module.exports = {
       "path-checker-plugin/path-checker": "off",
       "react/jsx-props-no-spreading": "off",
       "i18next/no-literal-string": "off",
+      "path-checker-plugin/public-api-import-lock": "off",
     },
   },
   ],

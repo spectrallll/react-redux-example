@@ -52,6 +52,13 @@ module.exports = {
     //       ignoreComments: true,
     //       code: 120,
     //     }],
+    "path-checker-plugin/upper-layer-import-dont": [
+      "error",
+      {
+        alias: "@",
+        ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+      },
+    ],
     "path-checker-plugin/path-checker": ["error", { alias: "@" }],
     "path-checker-plugin/public-api-import-lock": ["error", {
       alias: "@",

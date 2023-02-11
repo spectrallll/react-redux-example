@@ -3,9 +3,9 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
 import Avatar from "@/shared/assets/mocks/avatar.jpg";
 import { ProfileCard } from "./ProfileCard";
+import { Theme } from "@/shared/const/theme";
 
 export default {
   title: "entities/Profile/ProfileCard",

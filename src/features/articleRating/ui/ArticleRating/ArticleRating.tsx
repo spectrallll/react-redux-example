@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { RatingCard } from "@/entities/Rating";
 import { useGetArticleRating, useRateArticle } from "../../api/articleRatingApi";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 
 export interface ArticleRatingProps {
     className?: string;
@@ -27,7 +27,6 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const [rateArticleMutation] = useRateArticle();
 
   const rating = data?.[0];
-  console.log(rating);
 
   const handleRateArticle = useCallback((starsCount: number, feedback?: string) => {
     try {

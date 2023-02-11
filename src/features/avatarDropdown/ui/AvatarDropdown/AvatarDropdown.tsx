@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from "@/entities/User";

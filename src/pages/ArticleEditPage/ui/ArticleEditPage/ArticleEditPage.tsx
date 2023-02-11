@@ -23,7 +23,7 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     <Page
       className={classNames(styles.ArticleEditPage, {}, [className])}
     >
-      {isEdit ? <div>Edit</div> : <div>Create</div>}
+      {isEdit ? <div>{t("Редактировать")}</div> : <div>{t("Создать")}</div>}
     </Page>
   );
 });

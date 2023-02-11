@@ -8,6 +8,9 @@ import { getUserInited, userActions } from "@/entities/User";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 function App() {
+  // TODO: написать документашку на весь проект
+  // TODO: написать документашку на весь проект
+  // TODO: написать документашку на весь проект
   const { theme } = useTheme();
   const dispatch = useDispatch();
   const init = useSelector(getUserInited);

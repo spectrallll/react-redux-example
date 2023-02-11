@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
+  extends: ["plugin:react/recommended", "airbnb", "plugin:i18next/recommended", "plugin:react-hooks/recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -17,6 +17,7 @@ module.exports = {
     "@typescript-eslint",
     "i18next",
     "path-checker-plugin",
+    "unused-imports",
   ],
   rules: {
     "react/jsx-indent": [2, 2],
@@ -24,6 +25,7 @@ module.exports = {
     "react/jsx-filename-extension": [2, {
       extensions: [".ts", ".jsx", ".tsx"],
     }],
+    "unused-imports/no-unused-imports": "error",
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     quotes: ["error", "double"],

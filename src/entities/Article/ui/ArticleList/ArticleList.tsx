@@ -38,7 +38,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       key={article.id}
       target={target}
     />
-  ), [articles, view]);
+  ), [view, target]);
 
   if (!isLoading && !articles.length) {
     return (

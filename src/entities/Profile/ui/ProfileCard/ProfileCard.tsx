@@ -56,7 +56,7 @@ export const ProfileCard = ({
     ) {
       event.preventDefault();
     }
-  }, [data?.age]);
+  }, []);
 
   if (isLoading) {
     return (

@@ -1,24 +1,23 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button } from "@/shared/ui/Button";
-import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
-import { counterActions } from "../model/slice/counterSlice";
+import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
+import { useCounterActions } from "../model/slice/counterSlice";
 
 interface CounterProps {
     className?: string;
 }
 
 export const Counter = ({ className }: CounterProps) => {
-  const dispatch = useDispatch();
   const { t } = useTranslation();
-  const counterValue = useSelector(getCounterValue);
-  const increment = () => {
-    dispatch(counterActions.increment());
+  const counterValue = useCounterValue();
+  const { increment, decrement } = useCounterActions();
+  const incrementHandle = () => {
+    increment();
   };
 
-  const decrement = () => {
-    dispatch(counterActions.decrement());
+  const decrementHandle = () => {
+    decrement();
   };
 
   return (
@@ -28,13 +27,13 @@ export const Counter = ({ className }: CounterProps) => {
       </h1>
       <Button
         data-testid="increment-btn"
-        onClick={increment}
+        onClick={incrementHandle}
       >
         {t("+")}
       </Button>
       <Button
         data-testid="decrement-btn"
-        onClick={decrement}
+        onClick={decrementHandle}
       >
         {t("-")}
       </Button>

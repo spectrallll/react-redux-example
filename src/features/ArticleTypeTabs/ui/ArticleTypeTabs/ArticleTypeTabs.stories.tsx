@@ -1,18 +1,18 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { ArticleSortSelector } from "./ArticleSortSelector";
+import { ArticleTypeTabs } from "./ArticleTypeTabs";
 import { Theme } from "@/shared/const/theme";
 
 export default {
-  title: "entities/Article/ArticleSortSelector",
-  component: ArticleSortSelector,
+  title: "features/ArticleTypeTabs",
+  component: ArticleTypeTabs,
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof ArticleSortSelector>;
+} as ComponentMeta<typeof ArticleTypeTabs>;
 
-const Template: ComponentStory<typeof ArticleSortSelector> = (args) => <ArticleSortSelector {...args} />;
+const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {};

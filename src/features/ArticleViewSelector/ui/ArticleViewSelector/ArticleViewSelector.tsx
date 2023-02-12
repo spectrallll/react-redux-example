@@ -4,7 +4,7 @@ import ListIcon from "@/shared/assets/icons/list-24-24.svg";
 import TileIcon from "@/shared/assets/icons/tiled-24-24.svg";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
-import { ArticleView } from "../../model/consts/consts";
+import { ArticleView } from "@/entities/Article";
 import styles from "./ArticleViewSelector.module.scss";
 
 interface ArticleViewSelectorProps {

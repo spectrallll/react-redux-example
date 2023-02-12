@@ -4,8 +4,7 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import {
-  ArticleTypeTabs,
-  ArticleSortField, ArticleSortSelector, ArticleView, ArticleViewSelector, ArticleType,
+  ArticleSortField, ArticleView, ArticleType,
 } from "@/entities/Article";
 import { Input } from "@/shared/ui/Input";
 import { Card } from "@/shared/ui/Card";
@@ -20,6 +19,9 @@ import {
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import styles from "./ArticlesPageFilters.module.scss";
+import { ArticleViewSelector } from "@/features/ArticleViewSelector";
+import { ArticleSortSelector } from "@/features/ArticleSortSelector";
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 
 interface ArticlesPageFiltersProps {
     className?: string;

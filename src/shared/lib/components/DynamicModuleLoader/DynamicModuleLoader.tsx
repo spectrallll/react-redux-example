@@ -1,10 +1,11 @@
 import { ReactNode, useEffect } from "react";
 import { useDispatch, useStore } from "react-redux";
 import { Reducer } from "@reduxjs/toolkit";
-import { ReduxStoreWithManager, StateSchemaKey } from "@/app/providers/StoreProvider";
+import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from "@/app/providers/StoreProvider";
 
+// Однозначно сопоставляем типы, внедрить не правильный Reducer невозможно
 export type ReducersList = {
-  [name in StateSchemaKey]?: Reducer
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 interface DynamicModuleLoaderProps {
@@ -40,7 +41,7 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         });
       }
     };
-  }, []);
+  }, [dispatch, reducers, removeAfterUnmount, store.reducerManager]);
 
   return (
   // eslint-disable-next-line react/jsx-no-useless-fragment

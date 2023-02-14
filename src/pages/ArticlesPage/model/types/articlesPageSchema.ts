@@ -6,7 +6,7 @@ import { SortOrder } from "@/shared/types";
 
 export interface ArticlesPageSchema extends EntityState<Article>{
   isLoading?: boolean;
-  error?: string;
+  error?: string | null;
   view: ArticleView;
 
   // Paginate

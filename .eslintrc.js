@@ -79,7 +79,7 @@ module.exports = {
     },
   },
   {
-    files: ["**/src/**/*.stories.{jsx, tsx}", ".stories.tsx"],
+    files: ["**/src/**/*.stories.{jsx, tsx}", "AppImage.stories.tsx"],
     rules: {
       "max-len": "off",
       "path-checker-plugin/path-checker": "off",

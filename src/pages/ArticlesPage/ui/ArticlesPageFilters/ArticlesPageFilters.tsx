@@ -8,7 +8,7 @@ import {
 } from "@/entities/Article";
 import { Input } from "@/shared/ui/Input";
 import { Card } from "@/shared/ui/Card";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { articlesPageActions } from "../../model/slices/articlesPageSlice";

@@ -10,7 +10,7 @@ import App from "./app/App";
 const container = document.getElementById("root");
 
 if (!container) {
-  throw new Error("Контейнер root не найден");
+  throw new Error("Can't find root");
 }
 
 const root = createRoot(container);

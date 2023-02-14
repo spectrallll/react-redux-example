@@ -7,7 +7,7 @@ import AboutPage from "./AboutPage";
 import { Theme } from "@/shared/const/theme";
 
 export default {
-  title: "pages/ForbiddenPage",
+  title: "pages/AboutPage",
   component: AboutPage,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -20,10 +20,6 @@ export default {
 
 const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage {...args} />;
 
-export const AdminPageDark = Template.bind({});
-AdminPageDark.args = {};
-AdminPageDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const AdminPageDarkLight = Template.bind({});
-AdminPageDarkLight.args = {};
-AdminPageDarkLight.decorators = [ThemeDecorator(Theme.LIGHT)];
+export const AboutPageTemp = Template.bind({});
+AboutPageTemp.args = {};
+AboutPageTemp.decorators = [ThemeDecorator(Theme.DARK)];

@@ -6,7 +6,7 @@ import AdminPanelPage from "./AdminPanelPage";
 import { Theme } from "@/shared/const/theme";
 
 export default {
-  title: "pages/ForbiddenPage",
+  title: "pages/AdminPanelPage",
   component: AdminPanelPage,
   argTypes: {
     backgroundColor: { control: "color" },

@@ -1,13 +1,12 @@
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+
 import withMock from "storybook-addon-mock";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import ArticleRating from "./ArticleRating";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Theme } from "@/shared/const/theme";
 
 export default {
-  title: "features/ArticleRating/ArticleRating",
+  title: "features/ArticleRating",
   component: ArticleRating,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -17,49 +16,21 @@ export default {
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Normal = Template.bind({});
+Normal.args = {
   articleId: "1",
 };
-Primary.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: "1",
+Normal.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: "1" },
     },
-  },
-})];
-
-Primary.parameters = {
+  }),
+];
+Normal.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1&articleId&1`,
-      method: "GET",
-      status: 200,
-      response: [
-        {
-          rate: 4,
-        },
-      ],
-    },
-  ],
-};
-
-export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {
-  articleId: "1",
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  user: {
-    authData: {
-      id: "1",
-    },
-  },
-})];
-
-PrimaryDark.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/article-ratings?userId=1&articleId&1`,
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
       method: "GET",
       status: 200,
       response: [
@@ -75,18 +46,17 @@ export const WithoutRate = Template.bind({});
 WithoutRate.args = {
   articleId: "1",
 };
-WithoutRate.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: "1",
+WithoutRate.decorators = [
+  StoreDecorator({
+    user: {
+      authData: { id: "1" },
     },
-  },
-})];
-
+  }),
+];
 WithoutRate.parameters = {
   mockData: [
     {
-      url: `${__API__}/article-ratings?userId=1&articleId&1`,
+      url: `${__API__}/article-ratings?userId=1&articleId=1`,
       method: "GET",
       status: 200,
       response: [],

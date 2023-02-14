@@ -5,7 +5,6 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
-import Avatar from "@/shared/assets/mocks/avatar.jpg";
 import ProfilePage from "./ProfilePage";
 import { Theme } from "@/shared/const/theme";
 
@@ -34,7 +33,7 @@ ProfilePageDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
       firstname: "Naro",
       currency: Currency.RUB,
       city: "Moscow",
-      avatar: Avatar,
+      avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
     },
     readonly: true,
   },
@@ -51,7 +50,7 @@ ProfilePageLight.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
       firstname: "Naro",
       currency: Currency.RUB,
       city: "Moscow",
-      avatar: Avatar,
+      avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
     },
     readonly: true,
   },

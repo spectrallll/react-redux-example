@@ -32,5 +32,18 @@ Primary.args = {
 };
 
 export const PrimaryDark = Template.bind({});
-PrimaryDark.args = {};
+PrimaryDark.args = {
+  trigger: <Button>123</Button>,
+  items: [
+    {
+      content: "first",
+    },
+    {
+      content: "second",
+    },
+    {
+      content: "third",
+    },
+  ],
+};
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

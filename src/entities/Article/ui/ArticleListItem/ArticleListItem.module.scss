@@ -2,6 +2,48 @@
   cursor: pointer;
 }
 
+.TILE {
+  .views {
+    margin-left: auto;
+  }
+
+  .textBlock {
+    max-height: 200px;
+    overflow-y: hidden;
+    margin-top: 16px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .username {
+    margin-left: 8px;
+  }
+
+  .date {
+    margin-left: auto;
+  }
+
+  .title {
+    margin-top: 8px;
+  }
+
+  .img {
+    margin: 16px 0;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+  }
+}
+
 .LIST {
   width: 230px;
   transition: 0.2s;
@@ -61,47 +103,5 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-}
-
-.TILE {
-  .views {
-    margin-left: auto;
-  }
-
-  .textBlock {
-    max-height: 200px;
-    overflow-y: hidden;
-    margin-top: 16px;
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-  }
-
-  .username {
-    margin-left: 8px;
-  }
-
-  .date {
-    margin-left: auto;
-  }
-
-  .title {
-    margin-top: 8px;
-  }
-
-  .img {
-    margin: 16px 0;
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-  }
-
-  .footer {
-    display: flex;
-    align-items: center;
-    margin-top: 25px;
   }
 }

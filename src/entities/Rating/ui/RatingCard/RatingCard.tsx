@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import styles from "./RatingCard.module.scss";
 import { Card } from "@/shared/ui/Card";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { Text } from "@/shared/ui/Text";
@@ -76,7 +74,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
   return (
     <Card
       fullWidth
-      className={classNames(styles.RatingCard, {}, [className])}
+      className={className}
     >
       <VStack
         align="center"

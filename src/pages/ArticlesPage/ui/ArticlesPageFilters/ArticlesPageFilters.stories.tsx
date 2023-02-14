@@ -3,6 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticlesPageFilters } from "./ArticlesPageFilters";
 import { Theme } from "@/shared/const/theme";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 export default {
   title: "pages/ArticlesPage/ArticlesPageFilters",
@@ -16,7 +17,9 @@ const Template: ComponentStory<typeof ArticlesPageFilters> = (args) => <Articles
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+PrimaryDark.decorators = [StoreDecorator({})];

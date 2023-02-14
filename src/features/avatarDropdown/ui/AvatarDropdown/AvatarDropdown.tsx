@@ -3,12 +3,10 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
-import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import styles from "./AvatarDropdown.module.scss";
 import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
 
 interface AvatarDropdownProps {
@@ -41,11 +39,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   return (
     <Dropdown
       direction="bottom left"
-      className={classNames(
-        styles.AvatarDropdown,
-        {},
-        [className],
-      )}
+      className={className}
       items={
         [
           ...(isAdminPanelAvailable ? [{

@@ -20,6 +20,6 @@ export default {
 
 const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage {...args} />;
 
-export const AboutPageTemp = Template.bind({});
-AboutPageTemp.args = {};
-AboutPageTemp.decorators = [ThemeDecorator(Theme.DARK)];
+export const AboutPageDark = Template.bind({});
+AboutPageDark.args = {};
+AboutPageDark.decorators = [ThemeDecorator(Theme.DARK)];

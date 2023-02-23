@@ -22,6 +22,7 @@
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:e2e": "cypress open",
     "generate:slice": "node ./scripts/createSlice/index.js",
     "prepare": "husky install",
     "postinstall": "node ./scripts/clear-cache.js"
@@ -70,6 +71,7 @@
     "concurrently": "^7.6.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
+    "cypress": "^11.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-i18next": "^6.0.0-4",

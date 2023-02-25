@@ -11,7 +11,7 @@ describe("loginByUsername", () => {
   //   getState = jest.fn();
   // });
 
-  // test("login success", async () => {
+  // test("common success", async () => {
   //   const userValue = { username: "123", id: "1" };
   //   mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
   //   const action = loginByUsername({ username: "123", password: "123" });
@@ -50,7 +50,7 @@ describe("loginByUsername", () => {
     expect(result.payload).toBe(userValue);
   });
 
-  test("error login", async () => {
+  test("error common", async () => {
     const thunk = new TestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk({ username: "123", password: "123" });

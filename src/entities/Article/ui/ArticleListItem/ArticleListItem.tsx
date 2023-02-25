@@ -56,6 +56,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
       <div
+        data-testid="ArticleListItem"
         className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
       >
         <Card className={styles.card}>
@@ -107,6 +108,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   return (
     <div
+      data-testid="ArticleListItem"
       className={
         classNames(
           styles.ArticleListItem,

@@ -76,7 +76,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     default:
       return null;
     }
-  }, [article]);
+  }, []);
 
   useInitialEffect(() => {
     dispatch(fetchArticleById(id));
@@ -111,7 +111,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             className={styles.avatar}
           />
         </HStack>
-        <VStack gap="4" max>
+        <VStack gap="4" max data-testid="ArticleDetails.Info">
           <Text
             className={styles.title}
             title={article?.title}

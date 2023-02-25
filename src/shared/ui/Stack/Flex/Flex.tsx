@@ -55,6 +55,7 @@ export const Flex = memo((props: FlexProps) => {
     gap,
     max,
     tag = "div",
+    ...otherProps
   } = props;
 
   const classes = [
@@ -74,6 +75,7 @@ export const Flex = memo((props: FlexProps) => {
   return (
     <Tag
       className={classNames(styles.Flex, mods, classes)}
+      {...otherProps}
     >
       {children}
     </Tag>

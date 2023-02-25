@@ -113,6 +113,17 @@
       "city": "Moscow",
       "username": "manager",
       "avatar": "https://sun9-north.userapi.com/sun9-84/s/v1/ig2/JwB8G_BtsxOzXb71vsy-cKj1Cdezi7jHREQI_yuWH9ybfKhd7bgYP7LN9ZMvO1M9Q3vVda8F8Mzz_t383FOG3Nco.jpg?size=1024x680&quality=95&type=album"
+    },
+    {
+      "id": "4",
+      "firstname": "test",
+      "lastname": "user",
+      "age": 99,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "world",
+      "avatar": "https://download-cs.net/steam/avatars/3375.jpg"
     }
   ],
   "articles": [
@@ -619,6 +630,19 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://profacademia.ru/storage/uploads/2022/01/18/2d85067d4fdf3f955b2de50c3926dffddae0e8e3.jpg",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "Q_RZA0N"
     }
   ],
   "comments": [
@@ -687,6 +711,12 @@
       "userId": "1",
       "text": "admin",
       "id": "fYLDm16"
+    },
+    {
+      "articleId": "3",
+      "userId": "4",
+      "text": "Привет Мир!",
+      "id": "p922Tya"
     }
   ],
   "article-ratings": [

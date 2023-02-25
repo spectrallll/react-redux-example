@@ -44,7 +44,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     } else {
       onAccept?.(starsCount);
     }
-  }, [hasFeedback, onAccept]);
+  }, [hasFeedback, onAccept, starsCount]);
 
   const onModalClose = useCallback(() => {
     setIsModalOpen(false);
@@ -64,6 +64,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
     <>
       <Text title={feedbackTitle} />
       <Input
+        data-testid="RatingCard.Input"
         value={feedback}
         placeholder={t("Ваш отзыв")}
         onChange={setFeedback}
@@ -73,6 +74,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
   return (
     <Card
+      data-testid="RatingCard"
       fullWidth
       className={className}
     >
@@ -97,10 +99,10 @@ export const RatingCard = memo((props: RatingCardProps) => {
           <VStack max gap="32">
             {modalContent}
             <HStack max gap="16" justify="end">
-              <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINED_RED}>
+              <Button data-testid="RatingCard.Close" onClick={cancelHandle} theme={ButtonTheme.OUTLINED_RED}>
                 {t("Закрыть")}
               </Button>
-              <Button onClick={acceptHandler}>
+              <Button data-testid="RatingCard.Send" onClick={acceptHandler}>
                 {t("Отправить")}
               </Button>
             </HStack>

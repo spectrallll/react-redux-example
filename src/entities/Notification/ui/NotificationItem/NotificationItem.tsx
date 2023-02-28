@@ -6,24 +6,17 @@ import styles from "./NotificationItem.module.scss";
 import { Notification } from "../../model/types/notifications";
 
 interface NotificationItemProps {
-    className?: string;
-    item: Notification;
+  className?: string;
+  item: Notification;
 }
 
 export const NotificationItem = memo((props: NotificationItemProps) => {
-  const {
-    className,
-    item,
-  } = props;
+  const { className, item } = props;
 
   const content = (
     <Card
       theme={CardTheme.OUTLINED}
-      className={classNames(
-        styles.NotificationItem,
-        {},
-        [className],
-      )}
+      className={classNames(styles.NotificationItem, {}, [className])}
     >
       <Text text={item.description} title={item.title} />
     </Card>
@@ -42,7 +35,5 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
     );
   }
 
-  return (
-    content
-  );
+  return content;
 });

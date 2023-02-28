@@ -4,13 +4,16 @@ import { Page } from "@/widgets/Page";
 import styles from "./NotFoundPage.module.scss";
 
 interface NotFoundPageProps {
-    className?: string;
+  className?: string;
 }
 
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
   const { t } = useTranslation();
   return (
-    <Page data-testid="NotFoundPage" className={classNames(styles.NotFoundPage, {}, [className])}>
+    <Page
+      data-testid="NotFoundPage"
+      className={classNames(styles.NotFoundPage, {}, [className])}
+    >
       {t("Страница не найдена")}
     </Page>
   );

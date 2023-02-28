@@ -5,11 +5,11 @@ import { Page } from "@/widgets/Page";
 import { EditableProfileCard } from "@/features/editableProfileCard";
 
 interface ProfilePageProps {
-    className?: string;
+  className?: string;
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
-  const { id } = useParams<{ id: string}>();
+  const { id } = useParams<{ id: string }>();
   return (
     <Page data-testid="ProfilePage" className={classNames("", {}, [className])}>
       <EditableProfileCard id={id} />

@@ -1,6 +1,4 @@
-import {
-  ButtonHTMLAttributes, memo, ReactNode,
-} from "react";
+import { ButtonHTMLAttributes, memo, ReactNode } from "react";
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import styles from "./Button.module.scss";
 
@@ -8,9 +6,8 @@ export enum ButtonTheme {
   PRIMARY = "primary",
   CLEAR = "clear",
   OUTLINE = "outline",
-  OUTLINED_RED = "outline_red"
-  ,
-  BACKGROUND = "background"
+  OUTLINED_RED = "outline_red",
+  BACKGROUND = "background",
 }
 
 export enum ButtonSize {
@@ -19,13 +16,13 @@ export enum ButtonSize {
   XL = "size_xl",
 }
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    className?: string;
-    theme?: ButtonTheme;
-    square?: boolean;
-    size?: ButtonSize;
-    fullWidth?: boolean;
-    children: ReactNode;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  theme?: ButtonTheme;
+  square?: boolean;
+  size?: ButtonSize;
+  fullWidth?: boolean;
+  children: ReactNode;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -48,7 +45,11 @@ export const Button = memo((props: ButtonProps) => {
 
   return (
     <button
-      className={classNames(styles.Button, mods, [className, styles[theme], styles[size]])}
+      className={classNames(styles.Button, mods, [
+        className,
+        styles[theme],
+        styles[size],
+      ])}
       type="button"
       disabled={disabled}
       {...rest}

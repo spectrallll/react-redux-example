@@ -1,5 +1,10 @@
 import {
-  AnyAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  CombinedState,
+  Dispatch,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { CounterSchema } from "@/entities/Counter";
@@ -7,9 +12,7 @@ import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/authByUsername";
 import { ProfileSchema } from "@/features/editableProfileCard";
 import { ArticleDetailsSchema } from "@/entities/Article";
-import {
-  ArticleDetailsPageSchema,
-} from "@/pages/ArticleDetailsPage";
+import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { ArticlesPageSchema } from "@/pages/ArticlesPage";
 import { ScrollSaveSchema } from "@/widgets/Page";
@@ -43,12 +46,12 @@ export interface ReducerManager {
   getMountedReducers: () => MountedReducers;
 }
 
-export interface ReduxStoreWithManager extends EnhancedStore<StateSchema>{
-  reducerManager: ReducerManager
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
+  reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {
-  api: AxiosInstance,
+  api: AxiosInstance;
 }
 
 export interface ThunkConfig<T> {

@@ -13,47 +13,52 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  decorators: [(story) => (
-    <div style={{ width: "200px" }}>
-      {story()}
-    </div>
-  )],
+  decorators: [(story) => <div style={{ width: "200px" }}>{story()}</div>],
 } as ComponentMeta<typeof AvatarDropdown>;
 
-const Template: ComponentStory<typeof AvatarDropdown> = (args) => <AvatarDropdown {...args} />;
+const Template: ComponentStory<typeof AvatarDropdown> = (args) => (
+  <AvatarDropdown {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      username: "spectrall",
-      avatar: MockAvatar,
-      roles: [UserRole.USER],
+Primary.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        username: "spectrall",
+        avatar: MockAvatar,
+        roles: [UserRole.USER],
+      },
     },
-  },
-})];
+  }),
+];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  user: {
-    authData: {
-      username: "spectrall",
-      avatar: MockAvatar,
-      roles: [UserRole.USER],
+PrimaryDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    user: {
+      authData: {
+        username: "spectrall",
+        avatar: MockAvatar,
+        roles: [UserRole.USER],
+      },
     },
-  },
-})];
+  }),
+];
 
 export const WithAdmin = Template.bind({});
 WithAdmin.args = {};
-WithAdmin.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      username: "spectrall",
-      avatar: MockAvatar,
-      roles: [UserRole.ADMIN, UserRole.MANAGER],
+WithAdmin.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        username: "spectrall",
+        avatar: MockAvatar,
+        roles: [UserRole.ADMIN, UserRole.MANAGER],
+      },
     },
-  },
-})];
+  }),
+];

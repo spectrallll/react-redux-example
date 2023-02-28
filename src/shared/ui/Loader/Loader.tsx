@@ -2,7 +2,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Loader.module.scss";
 
 interface LoaderProps {
-    className?: string;
+  className?: string;
 }
 
 export const Loader = ({ className }: LoaderProps) => (

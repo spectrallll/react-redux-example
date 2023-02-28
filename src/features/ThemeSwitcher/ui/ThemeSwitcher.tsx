@@ -9,7 +9,7 @@ import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { Theme } from "@/shared/const/theme";
 
 interface ThemeSwitcherProps {
-    className?: string;
+  className?: string;
 }
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
@@ -17,11 +17,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
 
   return (
     <Button
-      className={classNames(
-        styles.ThemeSwitcher,
-        {},
-        [className],
-      )}
+      className={classNames(styles.ThemeSwitcher, {}, [className])}
       onClick={toggleTheme}
       theme={ButtonTheme.CLEAR}
     >
@@ -30,15 +26,15 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         (() => {
           // eslint-disable-next-line default-case
           switch (theme) {
-          case Theme.DARK: {
-            return <DarkIcon />;
-          }
-          case Theme.LIGHT: {
-            return <LightIcon />;
-          }
-          case Theme.PURPLE: {
-            return <PurpleIcon />;
-          }
+            case Theme.DARK: {
+              return <DarkIcon />;
+            }
+            case Theme.LIGHT: {
+              return <LightIcon />;
+            }
+            case Theme.PURPLE: {
+              return <PurpleIcon />;
+            }
           }
         })()
       }

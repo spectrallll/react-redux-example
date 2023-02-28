@@ -1,28 +1,24 @@
-import React, {
-  memo, ReactNode, useCallback, useEffect,
-} from "react";
+import React, { memo, ReactNode, useCallback, useEffect } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from "@/shared/lib/components/AnimationProvider";
 import { Overlay } from "../Overlay/Overlay";
 import styles from "./Drawer.module.scss";
 import { Portal } from "../Portal/Portal";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 interface DrawerProps {
-    className?: string;
-    children: ReactNode;
-    isOpen?: boolean;
-    onClose?: () => void;
+  className?: string;
+  children: ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
 }
 
 const height = window.innerHeight - 100;
 const DrawerContent = memo((props: DrawerProps) => {
-  const {
-    className,
-    children,
-    onClose,
-    isOpen,
-  } = props;
+  const { className, children, onClose, isOpen } = props;
   const { theme } = useTheme();
 
   const { Spring, Gesture } = useAnimationLibs();
@@ -43,8 +39,7 @@ const DrawerContent = memo((props: DrawerProps) => {
     api.start({
       y: height,
       immediate: false,
-      config:
-          { ...Spring.config.stiff, velocity },
+      config: { ...Spring.config.stiff, velocity },
       onResolve: onClose,
     });
   };
@@ -70,7 +65,10 @@ const DrawerContent = memo((props: DrawerProps) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -82,7 +80,13 @@ const DrawerContent = memo((props: DrawerProps) => {
 
   return (
     <Portal>
-      <div className={classNames(styles.Drawer, {}, [className, theme, "app_drawer"])}>
+      <div
+        className={classNames(styles.Drawer, {}, [
+          className,
+          theme,
+          "app_drawer",
+        ])}
+      >
         <Overlay onClick={() => close()} />
         <Spring.a.div
           className={styles.sheet}

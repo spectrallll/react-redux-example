@@ -5,37 +5,36 @@ import { Comment } from "@/entities/Comment";
 import { getArticleDetailsData } from "@/entities/Article";
 import { articleDetailsCommentsActions } from "../../slice/articleDetailsCommentsSlice";
 
-export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
-  "articleDetails/addCommentForArticle",
-  async (text, thunkApi) => {
-    const {
-      dispatch, rejectWithValue, extra, getState,
-    } = thunkApi;
+export const addCommentForArticle = createAsyncThunk<
+  Comment,
+  string,
+  ThunkConfig<string>
+>("articleDetails/addCommentForArticle", async (text, thunkApi) => {
+  const { dispatch, rejectWithValue, extra, getState } = thunkApi;
 
-    const userData = getUserAuthData(getState());
-    const article = getArticleDetailsData(getState());
+  const userData = getUserAuthData(getState());
+  const article = getArticleDetailsData(getState());
 
-    if (!userData || !text || !article) {
-      return rejectWithValue("no data");
-    }
+  if (!userData || !text || !article) {
+    return rejectWithValue("no data");
+  }
 
-    try {
-      const response = await extra.api.post<Comment>("/comments", {
-        articleId: article.id,
-        userId: userData.id,
-        text,
-      });
+  try {
+    const response = await extra.api.post<Comment>("/comments", {
+      articleId: article.id,
+      userId: userData.id,
+      text,
+    });
 
-      const newComment = {
-        id: response.data.id,
-        text: response.data.text,
-        user: userData,
-      };
-      dispatch(articleDetailsCommentsActions.addComment(newComment));
+    const newComment = {
+      id: response.data.id,
+      text: response.data.text,
+      user: userData,
+    };
+    dispatch(articleDetailsCommentsActions.addComment(newComment));
 
-      return response.data;
-    } catch (e) {
-      return rejectWithValue("error");
-    }
-  },
-);
+    return response.data;
+  } catch (e) {
+    return rejectWithValue("error");
+  }
+});

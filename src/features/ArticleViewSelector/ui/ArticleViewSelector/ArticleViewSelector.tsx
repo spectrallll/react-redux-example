@@ -8,9 +8,9 @@ import { ArticleView } from "@/entities/Article";
 import styles from "./ArticleViewSelector.module.scss";
 
 interface ArticleViewSelectorProps {
-    className?: string;
-    view: ArticleView;
-    onViewClick?: (view: ArticleView) => void;
+  className?: string;
+  view: ArticleView;
+  onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -25,11 +25,7 @@ const viewTypes = [
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-  const {
-    className,
-    view,
-    onViewClick,
-  } = props;
+  const { className, view, onViewClick } = props;
 
   const onClick = (newView: ArticleView) => () => {
     onViewClick?.(newView);
@@ -44,7 +40,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
           theme={ButtonTheme.CLEAR}
         >
           <Icon
-            className={classNames("", { [styles.notSelected]: viewType.view !== view })}
+            className={classNames("", {
+              [styles.notSelected]: viewType.view !== view,
+            })}
             Svg={viewType.icon}
           />
         </Button>

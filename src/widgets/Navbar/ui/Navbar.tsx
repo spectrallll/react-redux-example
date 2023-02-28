@@ -4,9 +4,7 @@ import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { LoginModal } from "@/features/authByUsername";
-import {
-  getUserAuthData,
-} from "@/entities/User";
+import { getUserAuthData } from "@/entities/User";
 import { Text, TextTheme } from "@/shared/ui/Text";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
 import { HStack } from "@/shared/ui/Stack";
@@ -16,7 +14,7 @@ import styles from "./Navbar.module.scss";
 import { getRouteArticleCreate } from "@/shared/const/router";
 
 interface NavbarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
@@ -47,11 +45,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         >
           {t("Создать статью")}
         </AppLink>
-        <HStack
-          gap="16"
-          className={styles.actions}
-          align="center"
-        >
+        <HStack gap="16" className={styles.actions} align="center">
           <NotificationButton />
           <AvatarDropdown />
         </HStack>
@@ -62,9 +56,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   return (
     <header className={classNames(styles.Navbar, {}, [className])}>
       <Text className={styles.appName} title={t("Press")} />
-      <AppLink to={getRouteArticleCreate()}>
-        {t("Создать статью")}
-      </AppLink>
+      <AppLink to={getRouteArticleCreate()}>{t("Создать статью")}</AppLink>
       <Button
         className={styles.links}
         theme={ButtonTheme.CLEAR}
@@ -73,10 +65,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         {t("Войти")}
       </Button>
       {isAuthModal && (
-        <LoginModal
-          onClose={onCloseModal}
-          isOpen={isAuthModal}
-        />
+        <LoginModal onClose={onCloseModal} isOpen={isAuthModal} />
       )}
     </header>
   );

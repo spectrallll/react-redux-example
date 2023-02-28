@@ -5,7 +5,7 @@ interface UseHoverBind {
   onMouseLeave: () => void;
 }
 
-type UseHoverResult = [boolean, UseHoverBind]
+type UseHoverResult = [boolean, UseHoverBind];
 
 export const useHover = () => {
   const [isHover, setIsHover] = useState(false);
@@ -18,11 +18,15 @@ export const useHover = () => {
     setIsHover(false);
   }, []);
 
-  return useMemo(() => [
-    isHover,
-    {
-      onMouseEnter,
-      onMouseLeave,
-    },
-  ] as UseHoverResult, [isHover, onMouseEnter, onMouseLeave]);
+  return useMemo(
+    () =>
+      [
+        isHover,
+        {
+          onMouseEnter,
+          onMouseLeave,
+        },
+      ] as UseHoverResult,
+    [isHover, onMouseEnter, onMouseLeave],
+  );
 };

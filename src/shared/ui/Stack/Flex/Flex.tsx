@@ -2,22 +2,25 @@ import { memo, ReactNode } from "react";
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import styles from "./Flex.module.scss";
 
-export type FlexJustify = "start"
-    | "center"
-    | "end" | "spaceBetween" | "spaceAround";
+export type FlexJustify =
+  | "start"
+  | "center"
+  | "end"
+  | "spaceBetween"
+  | "spaceAround";
 export type FlexAlign = "start" | "center" | "end";
 export type FlexDirection = "row" | "column";
 export type FlexGap = "4" | "8" | "16" | "32";
 
 export interface FlexProps {
-    className?: string;
-    children: ReactNode;
-    justify?: FlexJustify;
-    align?: FlexAlign;
-    direction: FlexDirection;
-    gap?: FlexGap;
-    max?: boolean;
-    tag?: keyof HTMLElementTagNameMap;
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
+  tag?: keyof HTMLElementTagNameMap;
 }
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -73,10 +76,7 @@ export const Flex = memo((props: FlexProps) => {
   const Tag = tag;
 
   return (
-    <Tag
-      className={classNames(styles.Flex, mods, classes)}
-      {...otherProps}
-    >
+    <Tag className={classNames(styles.Flex, mods, classes)} {...otherProps}>
       {children}
     </Tag>
   );

@@ -19,39 +19,49 @@ export default {
   },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+  <ProfilePage {...args} />
+);
 
 export const ProfilePageDark = Template.bind({});
 
-ProfilePageDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  profile: {
-    form: {
-      username: "admin",
-      age: 22,
-      country: Country.Russia,
-      lastname: "Palhosh",
-      firstname: "Naro",
-      currency: Currency.RUB,
-      city: "Moscow",
-      avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
+ProfilePageDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    profile: {
+      form: {
+        username: "admin",
+        age: 22,
+        country: Country.Russia,
+        lastname: "Palhosh",
+        firstname: "Naro",
+        currency: Currency.RUB,
+        city: "Moscow",
+        avatar:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
+      },
+      readonly: true,
     },
-    readonly: true,
-  },
-})];
+  }),
+];
 
 export const ProfilePageLight = Template.bind({});
-ProfilePageLight.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-  profile: {
-    form: {
-      username: "admin",
-      age: 22,
-      country: Country.Russia,
-      lastname: "Palhosh",
-      firstname: "Naro",
-      currency: Currency.RUB,
-      city: "Moscow",
-      avatar: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
+ProfilePageLight.decorators = [
+  ThemeDecorator(Theme.LIGHT),
+  StoreDecorator({
+    profile: {
+      form: {
+        username: "admin",
+        age: 22,
+        country: Country.Russia,
+        lastname: "Palhosh",
+        firstname: "Naro",
+        currency: Currency.RUB,
+        city: "Moscow",
+        avatar:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png",
+      },
+      readonly: true,
     },
-    readonly: true,
-  },
-})];
+  }),
+];

@@ -4,14 +4,14 @@ import styles from "./Card.module.scss";
 
 export enum CardTheme {
   NORMAL = "normal",
-  OUTLINED = "outlined"
+  OUTLINED = "outlined",
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
-    className?: string;
-    children: ReactNode;
-    theme?: CardTheme;
-    fullWidth?: boolean;
+  className?: string;
+  children: ReactNode;
+  theme?: CardTheme;
+  fullWidth?: boolean;
 }
 
 export const Card = (props: CardProps) => {
@@ -25,7 +25,10 @@ export const Card = (props: CardProps) => {
 
   return (
     <div
-      className={classNames(styles.Card, { [styles.fullWidth]: fullWidth }, [className, styles[theme]])}
+      className={classNames(styles.Card, { [styles.fullWidth]: fullWidth }, [
+        className,
+        styles[theme],
+      ])}
       {...othersProps}
     >
       {children}

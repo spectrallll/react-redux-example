@@ -13,7 +13,9 @@ export default {
   },
 } as ComponentMeta<typeof AddCommentForm>;
 
-const Template: ComponentStory<typeof AddCommentForm> = (args) => <AddCommentForm {...args} />;
+const Template: ComponentStory<typeof AddCommentForm> = (args) => (
+  <AddCommentForm {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};
@@ -21,8 +23,11 @@ Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  addCommentForm: {
-    text: "hello world",
-  },
-})];
+PrimaryDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    addCommentForm: {
+      text: "hello world",
+    },
+  }),
+];

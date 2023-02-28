@@ -15,16 +15,14 @@ export default {
   },
 } as ComponentMeta<typeof CurrencySelect>;
 
-const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
+const Template: ComponentStory<typeof CurrencySelect> = (args) => (
+  <CurrencySelect {...args} />
+);
 
 export const Default = Template.bind({});
-Default.args = {
-
-};
+Default.args = {};
 
 export const Dark = Template.bind({});
-Dark.args = {
-
-};
+Dark.args = {};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

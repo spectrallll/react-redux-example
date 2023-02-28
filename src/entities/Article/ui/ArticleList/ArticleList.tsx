@@ -16,9 +16,16 @@ interface ArticleListProps {
   target?: HTMLAttributeAnchorTarget;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.LIST ? 9 : 3).fill(0).map((item, index) => (
-  <ArticleListItemSkeleton className={styles.card} view={view} key={`${index + 5}`} />
-));
+const getSkeletons = (view: ArticleView) =>
+  new Array(view === ArticleView.LIST ? 9 : 3)
+    .fill(0)
+    .map((item, index) => (
+      <ArticleListItemSkeleton
+        className={styles.card}
+        view={view}
+        key={`${index + 5}`}
+      />
+    ));
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
     className,
@@ -30,20 +37,26 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
   const { t } = useTranslation("article");
 
-  const renderArticle = useCallback((article: Article) => (
-    <ArticleListItem
-      article={article}
-      view={view}
-      className={styles.card}
-      key={article.id}
-      target={target}
-    />
-  ), [view, target]);
+  const renderArticle = useCallback(
+    (article: Article) => (
+      <ArticleListItem
+        article={article}
+        view={view}
+        className={styles.card}
+        key={article.id}
+        target={target}
+      />
+    ),
+    [view, target],
+  );
 
   if (!isLoading && !articles.length) {
     return (
       <div
-        className={classNames(styles.ArticleList, {}, [className, styles[view]])}
+        className={classNames(styles.ArticleList, {}, [
+          className,
+          styles[view],
+        ])}
       >
         <Text size={TextSize.L} title={t("Статьи не найдены")} />
       </div>

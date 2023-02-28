@@ -20,39 +20,28 @@ interface DropdownProps {
   direction?: DropdownDirection;
 }
 export const Dropdown = (props: DropdownProps) => {
-  const {
-    className,
-    items,
-    trigger,
-    direction = "bottom right",
-  } = props;
+  const { className, items, trigger, direction = "bottom right" } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
     <Menu
       as="div"
-      className={classNames(
-        styles.Dropdown,
-        {},
-        [className, popupStyles.popup],
-      )}
+      className={classNames(styles.Dropdown, {}, [
+        className,
+        popupStyles.popup,
+      ])}
     >
-      <Menu.Button
-        className={popupStyles.trigger}
-      >
-        {trigger}
-      </Menu.Button>
+      <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
         {items.map((item, index) => {
-          const content = ({ active }: {active:boolean}) => (
+          const content = ({ active }: { active: boolean }) => (
             <button
               disabled={item.disabled}
               type="button"
-              className={classNames(
-                styles.item,
-                { [popupStyles.active]: active },
-              )}
+              className={classNames(styles.item, {
+                [popupStyles.active]: active,
+              })}
               onClick={item.onClick}
             >
               {item.content}
@@ -67,7 +56,6 @@ export const Dropdown = (props: DropdownProps) => {
                 disabled={item.disabled}
                 /* eslint-disable-next-line react/no-array-index-key */
                 key={`dropdown key${index}`}
-
               >
                 {content}
               </Menu.Item>

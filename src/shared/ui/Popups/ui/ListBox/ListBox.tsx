@@ -39,19 +39,13 @@ export const ListBox = (props: ListBoxProps) => {
 
   return (
     <HStack gap="4">
-      {label
-          && (
-            <span className={
-              classNames(
-                "",
-                { [popupStyles.disabled]: readonly },
-                [],
-              )
-            }
-            >
-              {`${label}:`}
-            </span>
-          )}
+      {label && (
+        <span
+          className={classNames("", { [popupStyles.disabled]: readonly }, [])}
+        >
+          {`${label}:`}
+        </span>
+      )}
       <HListBox
         disabled={readonly}
         as="div"
@@ -63,20 +57,13 @@ export const ListBox = (props: ListBoxProps) => {
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button
-          disabled={readonly}
-          className={styles.trigger}
-        >
-          <Button disabled={readonly}>
-            {value ?? defaultValue}
-          </Button>
+        <HListBox.Button disabled={readonly} className={styles.trigger}>
+          <Button disabled={readonly}>{value ?? defaultValue}</Button>
         </HListBox.Button>
         <HListBox.Options
-          className={classNames(
-            styles.options,
-            {},
-            [mapDirectionClass[direction]],
-          )}
+          className={classNames(styles.options, {}, [
+            mapDirectionClass[direction],
+          ])}
         >
           {items?.map((item) => (
             <HListBox.Option
@@ -87,10 +74,14 @@ export const ListBox = (props: ListBoxProps) => {
             >
               {({ active, selected, disabled }) => (
                 <li
-                  className={classNames(styles.item, {
-                    [popupStyles.active]: active,
-                    [popupStyles.disabled]: disabled,
-                  }, [])}
+                  className={classNames(
+                    styles.item,
+                    {
+                      [popupStyles.active]: active,
+                      [popupStyles.disabled]: disabled,
+                    },
+                    [],
+                  )}
                 >
                   {selected && ">"}
                   {item.content}

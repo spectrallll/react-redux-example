@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "firstname": "test",
+  "lastname": "user",
+  "age": 99,
+  "currency": "RUB",
+  "country": "Russia",
+  "city": "Moscow",
+  "username": "world",
+  "avatar": "https://download-cs.net/steam/avatars/3375.jpg"
+}

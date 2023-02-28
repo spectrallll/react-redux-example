@@ -13,13 +13,13 @@ import { profileActions } from "../../model/slice/profileSlice";
 import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 
 interface EditableProfileCardHeaderProps {
-    className?: string;
+  className?: string;
 }
 
-export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps) => {
-  const {
-    className,
-  } = props;
+export const EditableProfileCardHeader = (
+  props: EditableProfileCardHeaderProps,
+) => {
+  const { className } = props;
   const { t } = useTranslation("profile");
 
   const authData = useSelector(getUserAuthData);
@@ -59,28 +59,26 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
             >
               {t("Редактировать")}
             </Button>
-          )
-            : (
-              <HStack gap="8">
-                <Button
-                  theme={ButtonTheme.OUTLINED_RED}
-                  onClick={onCancelEdit}
-                  data-testid="EditableProfileCardHeader.CancelButton"
-                >
-                  {t("Отменить")}
-                </Button>
-                <Button
-                  theme={ButtonTheme.OUTLINE}
-                  onClick={onSave}
-                  data-testid="EditableProfileCardHeader.SaveButton"
-                >
-                  {t("Сохранить")}
-                </Button>
-              </HStack>
-            )}
+          ) : (
+            <HStack gap="8">
+              <Button
+                theme={ButtonTheme.OUTLINED_RED}
+                onClick={onCancelEdit}
+                data-testid="EditableProfileCardHeader.CancelButton"
+              >
+                {t("Отменить")}
+              </Button>
+              <Button
+                theme={ButtonTheme.OUTLINE}
+                onClick={onSave}
+                data-testid="EditableProfileCardHeader.SaveButton"
+              >
+                {t("Сохранить")}
+              </Button>
+            </HStack>
+          )}
         </div>
       )}
-
     </HStack>
   );
 };

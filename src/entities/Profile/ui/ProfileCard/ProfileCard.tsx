@@ -12,24 +12,24 @@ import styles from "./ProfileCard.module.scss";
 import { Profile } from "../../model/types/profile";
 
 export enum validKeyboardKeys {
-    BACKSPACE = "Backspace",
-    ARROWRIGHT = "ArrowRight",
-    ARROWLEFT = "ArrowLeft",
+  BACKSPACE = "Backspace",
+  ARROWRIGHT = "ArrowRight",
+  ARROWLEFT = "ArrowLeft",
 }
 interface ProfileCardProps {
-    className?: string;
-    data?: Profile
-    isLoading?: boolean;
-    error?: string;
-    readonly?: boolean;
-    onChangeFirstname?: (value?: string) => void;
-    onChangeLastname?: (value?: string) => void;
-    onChangeCity?: (value?: string) => void;
-    onChangeAge?: (value?: string) => void;
-    onChangeUsername?: (value?: string) => void;
-    onChangeAvatar?: (value?: string) => void;
-    onChangeCurrency?: (currency?: Currency) => void;
-    onChangeCountry?: (country?: Country) => void;
+  className?: string;
+  data?: Profile;
+  isLoading?: boolean;
+  error?: string;
+  readonly?: boolean;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (currency?: Currency) => void;
+  onChangeCountry?: (country?: Country) => void;
 }
 
 export const ProfileCard = ({
@@ -51,8 +51,8 @@ export const ProfileCard = ({
 
   const onKeyPress = useCallback((event: React.KeyboardEvent) => {
     if (
-      !/[0-9]/.test(event.key)
-            && !(Object.values(validKeyboardKeys).some((v) => v === event.key))
+      !/[0-9]/.test(event.key) &&
+      !Object.values(validKeyboardKeys).some((v) => v === event.key)
     ) {
       event.preventDefault();
     }
@@ -60,7 +60,13 @@ export const ProfileCard = ({
 
   if (isLoading) {
     return (
-      <HStack justify="center" className={classNames(styles.ProfileCard, {}, [className, styles.loading])}>
+      <HStack
+        justify="center"
+        className={classNames(styles.ProfileCard, {}, [
+          className,
+          styles.loading,
+        ])}
+      >
         <Loader />
       </HStack>
     );
@@ -68,7 +74,13 @@ export const ProfileCard = ({
 
   if (error) {
     return (
-      <HStack justify="center" className={classNames(styles.ProfileCard, {}, [className, styles.error])}>
+      <HStack
+        justify="center"
+        className={classNames(styles.ProfileCard, {}, [
+          className,
+          styles.error,
+        ])}
+      >
         <Text
           title={t("Произошла ошибка при загрузке данных")}
           text={t("Попробуйте обновить страницу")}

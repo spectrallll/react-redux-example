@@ -4,19 +4,20 @@ import { useSelector } from "react-redux";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Dropdown } from "@/shared/ui/Popups";
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
 } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
 
 interface AvatarDropdownProps {
-    className?: string;
+  className?: string;
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-  const {
-    className,
-  } = props;
+  const { className } = props;
 
   const dispatch = useAppDispatch();
 
@@ -40,25 +41,25 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     <Dropdown
       direction="bottom left"
       className={className}
-      items={
-        [
-          ...(isAdminPanelAvailable ? [{
-            content: t("Админ"),
-            href: getRouteAdminPanel(),
-          }] : []),
-          {
-            content: t("Профиль"),
-            href: getRouteProfile(authData.id),
-          },
-          {
-            content: t("Выйти"),
-            onClick: onLogout,
-          },
-        ]
-      }
-      trigger={
-        <Avatar size={30} src={authData?.avatar} />
-      }
+      items={[
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t("Админ"),
+                href: getRouteAdminPanel(),
+              },
+            ]
+          : []),
+        {
+          content: t("Профиль"),
+          href: getRouteProfile(authData.id),
+        },
+        {
+          content: t("Выйти"),
+          onClick: onLogout,
+        },
+      ]}
+      trigger={<Avatar size={30} src={authData?.avatar} />}
     />
   );
 });

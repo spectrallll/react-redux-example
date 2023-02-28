@@ -11,13 +11,11 @@ import {
 import { getArticles } from "../../model/slices/articlesPageSlice";
 
 interface ArticleInfiniteListProps {
-    className?: string;
+  className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-  const {
-    className,
-  } = props;
+  const { className } = props;
 
   const { t } = useTranslation("article");
 
@@ -27,16 +25,14 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   const view = useSelector(getArticlesPageView);
 
   if (error) {
-    return <Text theme={TextTheme.ERROR} text={t("Ошибка при загрузке статей")} />;
+    return (
+      <Text theme={TextTheme.ERROR} text={t("Ошибка при загрузке статей")} />
+    );
   }
 
   return (
     <div className={className}>
-      <ArticleList
-        articles={articles}
-        view={view}
-        isLoading={isLoading}
-      />
+      <ArticleList articles={articles} view={view} isLoading={isLoading} />
     </div>
   );
 });

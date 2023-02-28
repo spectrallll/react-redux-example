@@ -6,23 +6,19 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./ArticleEditPage.module.scss";
 
 interface ArticleEditPageProps {
-    className?: string;
+  className?: string;
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-  const {
-    className,
-  } = props;
+  const { className } = props;
 
   const { t } = useTranslation();
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
 
   const isEdit = Boolean(id);
 
   return (
-    <Page
-      className={classNames(styles.ArticleEditPage, {}, [className])}
-    >
+    <Page className={classNames(styles.ArticleEditPage, {}, [className])}>
       {isEdit ? <div>{t("Редактировать")}</div> : <div>{t("Создать")}</div>}
     </Page>
   );

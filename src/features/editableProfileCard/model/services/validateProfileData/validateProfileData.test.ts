@@ -19,14 +19,16 @@ describe("validateProfileData.test", () => {
     expect(result).toEqual([]);
   });
   test("without first and last name", () => {
-    const result = validateProfileData({ ...data, firstname: "", lastname: "" });
+    const result = validateProfileData({
+      ...data,
+      firstname: "",
+      lastname: "",
+    });
     expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
   });
   test("incorrect age", () => {
     const result = validateProfileData({ ...data, age: undefined });
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_AGE,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
   });
   test("incorrect all", () => {
     const result = validateProfileData({});

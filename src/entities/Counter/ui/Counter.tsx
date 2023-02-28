@@ -5,7 +5,7 @@ import { useCounterValue } from "../model/selectors/getCounterValue/getCounterVa
 import { useCounterActions } from "../model/slice/counterSlice";
 
 interface CounterProps {
-    className?: string;
+  className?: string;
 }
 
 export const Counter = ({ className }: CounterProps) => {
@@ -22,19 +22,11 @@ export const Counter = ({ className }: CounterProps) => {
 
   return (
     <div className={classNames("", {}, [className])}>
-      <h1 data-testid="value-title">
-        {counterValue}
-      </h1>
-      <Button
-        data-testid="increment-btn"
-        onClick={incrementHandle}
-      >
+      <h1 data-testid="value-title">{counterValue}</h1>
+      <Button data-testid="increment-btn" onClick={incrementHandle}>
         {t("+")}
       </Button>
-      <Button
-        data-testid="decrement-btn"
-        onClick={decrementHandle}
-      >
+      <Button data-testid="decrement-btn" onClick={decrementHandle}>
         {t("-")}
       </Button>
     </div>

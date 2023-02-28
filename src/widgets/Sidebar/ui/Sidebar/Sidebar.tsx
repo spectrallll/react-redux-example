@@ -10,7 +10,7 @@ import styles from "./Sidebar.module.scss";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 
 interface SidebarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
@@ -20,18 +20,20 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
-  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <SidebarItem
-      item={item}
-      collapsed={collapsed}
-      key={item.path}
-    />
-  )), [collapsed, sidebarItemsList]);
+  const itemsList = useMemo(
+    () =>
+      sidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed, sidebarItemsList],
+  );
 
   return (
     <aside
       data-testid="sidebar"
-      className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
+      className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
+        className,
+      ])}
     >
       <Button
         className={styles.collapseBtn}
@@ -43,20 +45,12 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? ">" : "<"}
       </Button>
-      <VStack
-        align="start"
-        tag="nav"
-        gap="8"
-        className={styles.items}
-      >
+      <VStack align="start" tag="nav" gap="8" className={styles.items}>
         {itemsList}
       </VStack>
       <div className={styles.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher
-          short={collapsed}
-          className={styles.lng}
-        />
+        <LangSwitcher short={collapsed} className={styles.lng} />
       </div>
     </aside>
   );

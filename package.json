@@ -9,6 +9,7 @@
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack  --env mode=production",
     "build:dev": "webpack  --env mode=development",
+    "prettier": "npx prettier --write **/*.{ts,tsx,json}",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
@@ -28,7 +29,7 @@
     "postinstall": "node ./scripts/clear-cache.js"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint"
+    "**/*.{ts,tsx}": ["eslint"]
   },
   "keywords": [],
   "author": "",
@@ -74,10 +75,11 @@
     "cypress": "^11.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-i18next": "^6.0.0-4",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-path-checker-plugin": "^1.1.0",
+    "eslint-plugin-path-checker-plugin": "^1.1.1",
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.10",
@@ -93,6 +95,7 @@
     "lint-staged": "^13.1.2",
     "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "2.8.4",
     "react-refresh": "^0.14.0",
     "reg-cli": "^0.17.6",
     "regenerator-runtime": "^0.13.9",

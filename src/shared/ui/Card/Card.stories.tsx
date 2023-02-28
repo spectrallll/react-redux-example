@@ -17,17 +17,11 @@ const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: <Text
-    title="TEXT"
-    text="hello world world world world"
-  />,
+  children: <Text title="TEXT" text="hello world world world world" />,
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  children: <Text
-    text="hello world other lorem"
-    title="Lorem ipsum"
-  />,
+  children: <Text text="hello world other lorem" title="Lorem ipsum" />,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

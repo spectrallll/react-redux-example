@@ -42,16 +42,18 @@ describe("features/EditableProfileCard", () => {
   });
 
   test("Переключение режима редактирования", async () => {
-    await userEvent.click(screen.getByTestId(
-      "EditableProfileCardHeader.EditButton",
-    ));
-    expect(screen.getByTestId("EditableProfileCardHeader.CancelButton")).toBeInTheDocument();
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.EditButton"),
+    );
+    expect(
+      screen.getByTestId("EditableProfileCardHeader.CancelButton"),
+    ).toBeInTheDocument();
   });
 
   test("При отмене редактирования значения должны обнуляться", async () => {
-    await userEvent.click(screen.getByTestId(
-      "EditableProfileCardHeader.EditButton",
-    ));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.EditButton"),
+    );
 
     await userEvent.clear(screen.getByTestId("ProfileCard.firstname"));
     await userEvent.clear(screen.getByTestId("ProfileCard.lastname"));
@@ -61,36 +63,45 @@ describe("features/EditableProfileCard", () => {
 
     expect(screen.getByTestId("ProfileCard.firstname")).toHaveValue("admin");
 
-    await userEvent.click(screen.getByTestId("EditableProfileCardHeader.CancelButton"));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.CancelButton"),
+    );
 
     expect(screen.getByTestId("ProfileCard.firstname")).toHaveValue("user");
     expect(screen.getByTestId("ProfileCard.lastname")).toHaveValue("user");
   });
 
   test("Валидация полей имя и фамиля отрабатывают", async () => {
-    await userEvent.click(screen.getByTestId(
-      "EditableProfileCardHeader.EditButton",
-    ));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.EditButton"),
+    );
 
     await userEvent.clear(screen.getByTestId("ProfileCard.firstname"));
     await userEvent.clear(screen.getByTestId("ProfileCard.lastname"));
 
-    await userEvent.click(screen.getByTestId("EditableProfileCardHeader.SaveButton"));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.SaveButton"),
+    );
 
-    expect(screen.getByTestId("EditableProfileCard.Error.Paragraph")).toBeInTheDocument();
-    expect(screen.getByTestId("EditableProfileCard.Error.Paragraph")).toHaveTextContent("Некорректная информация о пользователе");
+    expect(
+      screen.getByTestId("EditableProfileCard.Error.Paragraph"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByTestId("EditableProfileCard.Error.Paragraph"),
+    ).toHaveTextContent("Некорректная информация о пользователе");
   });
 
   test("На сервер отправился запрос", async () => {
     const mockPutReq = jest.spyOn($api, "put");
 
-    await userEvent.click(screen.getByTestId(
-      "EditableProfileCardHeader.EditButton",
-
-    ));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.EditButton"),
+    );
     await userEvent.type(screen.getByTestId("ProfileCard.firstname"), "admin");
 
-    await userEvent.click(screen.getByTestId("EditableProfileCardHeader.SaveButton"));
+    await userEvent.click(
+      screen.getByTestId("EditableProfileCardHeader.SaveButton"),
+    );
 
     expect(mockPutReq).toHaveBeenCalled();
   });

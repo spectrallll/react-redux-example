@@ -12,39 +12,50 @@ export default {
   },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentList> = (args) => (
+  <CommentList {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
-  comments: [{
-    text: "hello",
-    id: "1",
-    user: {
-      id: "1", username: "World",
+  comments: [
+    {
+      text: "hello",
+      id: "1",
+      user: {
+        id: "1",
+        username: "World",
+      },
     },
-  }],
+  ],
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  comments: [{
-    text: "world",
-    id: "1",
-    user: {
-      id: "1", username: "Hello",
+  comments: [
+    {
+      text: "world",
+      id: "1",
+      user: {
+        id: "1",
+        username: "Hello",
+      },
     },
-  }],
+  ],
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Loading = Template.bind({});
 Loading.args = {
-  comments: [{
-    text: "world",
-    id: "1",
-    user: {
-      id: "1", username: "Hello",
+  comments: [
+    {
+      text: "world",
+      id: "1",
+      user: {
+        id: "1",
+        username: "Hello",
+      },
     },
-  }],
+  ],
   isLoading: true,
 };
